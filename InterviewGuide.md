@@ -59,3 +59,25 @@ __How to Succeed In Person Interview__
 *  Always let your interviewer know what you are thinking as he/she will be as interested in your process of thought as your solution.
 *  Also, if you're stuck, they may provide hints if they know what you're doing.
 *  Finally, listen - don't miss a hint if your interviewer is trying to assist you!
+
+---  
+
+__Why are they asking you to Introduce Yourself?__  
+*  Reassurance of your background  
+*  Spark conversation  
+*  See what you think is important  
+
+---  
+
+__Introduce Yourself Template__  
+*  Who are you?  
+*  What's your background?  
+*  What's a recent accomplishment which fits this position?  
+*  Additional Criteria  
+	*  Organized and Brief  
+	*  Conveys confidence  
+	*  Professional demeanor  
+	*  Appropriate for the position  
+
+---  
+
