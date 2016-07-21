@@ -37,3 +37,25 @@ __Common Pitfalls__
 *  Not ensuring a 2-way dialogue  
 *  Not being prepared  
 *  Resume errors  
+
+---  
+
+__In Person Interview Format__  
+*  About 45 Minutes with Software Engineer  
+*  Introduction followed by questions on:  
+	*  Programming (whiteboard)  
+	*  Data Structures / Big-O  
+	*  Building Complex Algorithms  
+	*  Other CS Topics (Bitwise manipulation, Logic Problems, System design, Testing)  
+
+---  
+
+__How to Succeed In Person Interview__  
+*  It's OK to question your interviewer.
+*  When asked to provide a solution, first define and frame the problem as you see it.
+*  If you don't understand - ask for help or clarification.
+*  If you need to assume something - verbally check its a correct assumption!
+*  Describe how you want to tackle solving each part of the question.
+*  Always let your interviewer know what you are thinking as he/she will be as interested in your process of thought as your solution.
+*  Also, if you're stuck, they may provide hints if they know what you're doing.
+*  Finally, listen - don't miss a hint if your interviewer is trying to assist you!
