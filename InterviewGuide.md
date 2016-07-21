@@ -12,3 +12,22 @@ Introduction followed by questions on:
  3. Object Oriented Principles  
  4. Other CS Topics (Bitwise manipulation, Scripting, Proper use of Libraries, Testing)  
 
+__Practical Tips__ 
+*  Solid internet/phone connection + backup plan  
+	*  Have Google Hang-out/ Skype Account  
+	*  Look at camera, not yourself  
+*  Big expressions (e.g. careful about quick nods)  
+*  TEST EVERYTHING before the interview  
+	*  Get a friend to call you/etc.  
+*  If non-visual, it's okay to have notes  
+	*  But don't rely too heavily on them…  
+*  Take notes  
+	*  With whom did you interview, etc.  
+*  Find a way to relax beforehand  
+*  Be practiced and prepared!  
+
+__Common Pitfalls__  
+*  Not talking!  
+*  Not ensuring a 2-way dialogue  
+*  Not being prepared  
+*  Resume errors  
