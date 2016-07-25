@@ -10,6 +10,12 @@ __Algebraic properties__
 | Symmetric | If a = b then b = a | |  
 
 
+__Parentheses, Brackets and Braces__  
+**()** Parentheses  
+**[]** Square brackets  
+**{}** Braces  
+**<>** Angle brackets  
+
 __Order of operations__  
 **P** Parentheses  
 **E** Exponents  
