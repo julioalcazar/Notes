@@ -108,4 +108,4 @@ __Find and Recover from Mistakes__
 *  Tracing code helps to
 	*  catch bugs
 	*  consider edge cases
-	*  demonstrate thought process and workflow to interviewer
+	*  demonstrate thought process and work-flow to interviewer
