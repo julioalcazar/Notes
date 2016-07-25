@@ -28,7 +28,7 @@ __Practical Tips__
 *  Take notes  
 	*  With whom did you interview, etc.  
 *  Find a way to relax beforehand  
-*  Be practiced and prepared!  
+*  Be practised and prepared!  
 
 ---  
 
@@ -81,3 +81,31 @@ __Introduce Yourself Template__
 
 ---  
 
+__Live coding__  
+*  Pitfalls
+	*  Unconfirmed assumptions
+	*  Lack of communication
+	*  Missed errors and failure to correct them
+	*  Lack of follow-through and analysis
+*  Talking through the Processes
+
+---  
+
+__Unconfirmed Assumptions__  
+*  When given a problem, start by talking thought potential issues and asking clarifying questions
+	*  Ask Questions to help confirm your understanding of the task at hand
+	*  Ask Key questions ( is the input a float? is the input negative? etc.... )
+	*  Ask about corner cases 
+
+---  
+
+__Find and Recover from Mistakes__  
+*  Trace what's actually written  
+*  Acknowledge the mistake, but don't get flustered  
+*  Mistakes
+	*  Not tracing code
+	*  Missing a hint
+*  Tracing code helps to
+	*  catch bugs
+	*  consider edge cases
+	*  demonstrate thought process and workflow to interviewer
