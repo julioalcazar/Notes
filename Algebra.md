@@ -1,7 +1,5 @@
 __Algebraic properties__  
 
-
-
 | Property | Note 1           |Note 2    |  
 |:-------- |:---------------- |:-------- |  
 | Reflexive | a = a | |  
@@ -10,3 +8,12 @@ __Algebraic properties__
 | Distributive | a (b + c) = ab + ac | (b + c)a = ba + ca | |  
 | Transitive  | If a = b and b = c then a = c | |  
 | Symmetric | If a = b then b = a | |  
+
+
+__Order of operations__  
+**P** Parentheses  
+**E** Exponents  
+**M** Multiplication  
+**D** Division  
+**A** Addition  
+**S** Subtraction  
