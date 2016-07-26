@@ -118,3 +118,9 @@ __Good Phone Interview__
 *  Show function input and output
 *  Check with interviewer if you could use built in functions.
 *  When done codding test and show variable values in a comment from
+
+---  
+
+__Personal Interview__  
+*  Tell me about a project you worked on?
+	*  
