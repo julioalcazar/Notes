@@ -18,7 +18,11 @@ __Algebraic properties__
 
 | Simplification    |
 |:----------------- |
-|![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/xaxb.png) |
+|![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/xaxb.png) |
+|![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/xaya.png) |
+|![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/xab.png) |
+|![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/x-a.png) |
+|![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/xa-b.png) |
 
 __Parentheses, Brackets and Braces__  
 **()** Parentheses  
