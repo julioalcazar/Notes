@@ -24,6 +24,10 @@ __Algebraic properties__
 |![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/x-a.png) |
 |![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/xa-b.png) |
 
+| Know The Invisible (Understood) Ones    |
+|:----------------- |
+|![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/UnderstoodOnes.png) |
+
 __Parentheses, Brackets and Braces__  
 **()** Parentheses  
 **[]** Square brackets  
