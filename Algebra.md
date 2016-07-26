@@ -3,8 +3,8 @@ __Algebraic properties__
 | Property          | Note 1           |Note 2    |  
 |:----------------- |:---------------- |:-------- |  
 | Reflexive         | a = a            |          |  
-| Identity          | a + 0 = a        |          |  
-| Inverse           | a + -a = 0       |          |  
+| Additive Identity | a + 0 = a        |          |  
+| Additive Inverse  | a + (-a) = 0     |          |  
 | Commutative       | a + b = b + a    | ab = ba  |  
 | Associative       | (a + b) + c = a + (b + c) | (ab)c = a(bc) | |  
 | Distributive      | a (b + c) = ab + ac | (b + c)a = ba + ca | |  
