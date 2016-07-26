@@ -109,3 +109,12 @@ __Find and Recover from Mistakes__
 	*  catch bugs
 	*  consider edge cases
 	*  demonstrate thought process and work-flow to interviewer
+
+---  
+
+__Good Phone Interview__  
+*  Restate you problem in a a code comment from
+*  Ask about error handling 
+*  Show function input and output
+*  Check with interviewer if you could use built in functions.
+*  When done codding test and show variable values in a comment from
