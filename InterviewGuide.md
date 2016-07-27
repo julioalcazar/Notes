@@ -139,4 +139,3 @@ __STAR__
 	*  Your talk should be understandable to audience, Don't talk technical with non-technical people  
 		*  Practice with different level of technical background  
 		*  Ask if the want more details or technical information 
- 
