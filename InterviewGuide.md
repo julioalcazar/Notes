@@ -123,4 +123,20 @@ __Good Phone Interview__
 
 __Personal Interview__  
 *  Tell me about a project you worked on?
-	*  
+	*  Show that you can solve problems
+	*  Show your communications skills
+	*  Use STAR method (Situation, Task Action, Result)
+
+---  
+
+__STAR__  
+*  Start with the problem (problem = reason for listener to care)
+	*  High level description  
+	*  Lower level description (more technical)  
+*  Pitfall 
+	*  Getting to the solution too quickly (Interviewer doesn't understand the problem your trying to solve)  
+	*  Not listening for interviewer/questions.  
+	*  Your talk should be understandable to audience, Don't talk technical with non-technical people  
+		*  Practice with different level of technical background  
+		*  Ask if the want more details or technical information 
+ 
