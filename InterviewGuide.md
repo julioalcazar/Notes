@@ -138,4 +138,8 @@ __STAR__
 	*  Not listening for interviewer/questions.  
 	*  Your talk should be understandable to audience, Don't talk technical with non-technical people  
 		*  Practice with different level of technical background  
-		*  Ask if the want more details or technical information 
+		*  Ask if the want more details or technical information  
+	*  Use clear language  
+	*  Not overly technical  
+	*  Don't want solution to sound complicated
+	*  Keep is simple and elegant  
