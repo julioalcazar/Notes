@@ -54,7 +54,7 @@ __How to Succeed In Person Interview__
 *  It's OK to question your interviewer.
 *  When asked to provide a solution, first define and frame the problem as you see it.
 *  If you don't understand - ask for help or clarification.
-*  If you need to assume something - verbally check its a correct assumption!
+*  If you need to assume something - verbally check it’s a correct assumption!
 *  Describe how you want to tackle solving each part of the question.
 *  Always let your interviewer know what you are thinking as he/she will be as interested in your process of thought as your solution.
 *  Also, if you're stuck, they may provide hints if they know what you're doing.
@@ -139,7 +139,39 @@ __STAR__
 	*  Your talk should be understandable to audience, Don't talk technical with non-technical people  
 		*  Practice with different level of technical background  
 		*  Ask if the want more details or technical information  
-	*  Use clear language  
-	*  Not overly technical  
-	*  Don't want solution to sound complicated
-	*  Keep is simple and elegant  
+
+---  
+
+__Interacting with Audience__  
+*  Use clear language  
+*  Not overly technical  
+*  Don't want solution to sound complicated
+*  Keep is simple and elegant  
+*  Make use of visual aids (make use of a whiteboard to explain your previous project)
+
+---  
+
+__Communication Skills__   
+*  Make eye contact
+	*  Read your audience and adjust
+	*  Don’t leave your audience behind
+	*  Be excited!
+	*  Practice
+
+---  
+
+__Responding to your Audience__
+*  If interview asks a question don’t shut him down (he should not feel his question was stupid)
+*  If they are asking questions that means they are interested in your work
+*  Acknowledge the person asking the question
+*  Be sure you understand the question
+*  Refer to your previous work
+*  Make sure you answered the question
+
+---  
+
+__Describing a group project__
+*  Talk about challenges you face as part of team?
+	*  High light challenger and how you solved them
+	*  Show group work
+	*  Practice
