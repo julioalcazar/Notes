@@ -160,7 +160,7 @@ __Communication Skills__
 
 ---  
 
-__Responding to your Audience__
+__Responding to your Audience__  
 *  If interview asks a question don’t shut him down (he should not feel his question was stupid)
 *  If they are asking questions that means they are interested in your work
 *  Acknowledge the person asking the question
@@ -170,8 +170,41 @@ __Responding to your Audience__
 
 ---  
 
-__Describing a group project__
+__Describing a group project__  
 *  Talk about challenges you face as part of team?
 	*  High light challenger and how you solved them
 	*  Show group work
 	*  Practice
+
+---  
+
+__Algorithmic Problem Solving__  
+*  Ask questions
+	*  Brainstorm in the context of a special case
+	*  Discover potential obstacles
+	*  Hightlight additional assumptions and constraints
+*  Always provide a brute-force solution (it should not be smart or elegent just a correct solution)  
+	*  You don't have to implemented unless asked 
+	*  Test with normal input 
+	*  Test with edge cases
+	*  what Data Structures will be used
+	*  what is the performance
+	*  what is the trade-offs
+*  Now iterate this process with a more elegant solution
+*  Do a high level design
+	*  Listen to interviewer hints
+	*  Only write code if you are confident of your solution.
+
+---  
+
+__Algorithmic Problem Solving Hints__  
+*  When dealing with numbers 
+	*  Ask if there is negative number?
+	*  What does the numbers represent? Age? Size? 
+	*  Is the number int, float double? (Will it fit in int, float, etc.?)
+	*  Is there a number range? (1 to N ?)
+	*  Are number unique or duplicate?
+	*  Are they pre-sorted?
+	*  can we modify the container (array)?
+*  Work thought some examples
+*  Work thought some examples with strange behavior
