@@ -208,3 +208,18 @@ __Algorithmic Problem Solving Hints__
 	*  can we modify the container (array)?
 *  Work thought some examples
 *  Work thought some examples with strange behavior
+
+---  
+
+__Working on the Whiteboard__  
+*  Start with function definition (function inputs and outputs)
+*  write some code to validate your input
+*  Method name should be meaningful 
+*  Keep space between lines so you can change code later or add code in between lines later
+*  Trace thought your code with an example
+*  You can use a one letter to represent a variable (tell interviewer that it you would use a better name but ur using one letter for favour of time) 
+*  try no to use i and j for variables (they look similar or they could be mistaken for ;) use K, M etc
+*  Write big enough
+
+---  
+
