@@ -223,3 +223,15 @@ __Working on the Whiteboard__
 
 ---  
 
+__Interviewer Evaluation criteria__  
+*  Listening carefully?
+*  Can you understand what is given to you?  
+*  Comprehending questions?   
+*  Asking correct questions?
+*  Any unchecked assumptions?
+*  Hearing and heeding hints?
+*  Finding multiple solutions before choosing the best one?
+*  Seeking new ideas and methods?
+*  Inventing and flexible?
+*  Open to new ideas?
+*  Can questions move up to more complex problem solving?
