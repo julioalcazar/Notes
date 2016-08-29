@@ -10,3 +10,7 @@ __Characteristics of Great Code__
 * Is easy to enhance
 * Is well-tested and robust (meaning that it works)
 * Is well-documented
+
+__C++ Representation of Numbering System__  
+* Hexadecimal base by prefixing a "0x" eg: 0xdead 
+* Octal base by prefixing a numeric string with a zero eg: 0123 = 83.
