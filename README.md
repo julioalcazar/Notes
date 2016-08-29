@@ -3,6 +3,9 @@
 __Math__  
 [Algebra](https://github.com/amroibrahim/Notes/blob/master/Algebra.md)  
 
+__Science__
+[Physics](https://github.com/amroibrahim/Notes/blob/master/Physics.md)  
+  
 __Code__  
 [BitHacks](https://github.com/amroibrahim/Notes/blob/master/BitHacks.md)  
 [Boolean Algebra](https://github.com/amroibrahim/Notes/blob/master/BooleanAlgebra.md)  
