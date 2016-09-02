@@ -22,3 +22,40 @@ __Negative Numbers :__ Negative 2's complement numbers are represented as the bi
 __Algorithm:__  
 1. Invert all the bits in the number, that is, change all the zeros to ones and all the ones to zeros.  
 2. Add one to the inverted result (ignoring any overflow).  
+
+___Useful Properties of Binary Numbers___  
+1. If bit position zero of a binary (integer) value contains one, the number is an odd number; if this bit contains zero, then the number is even.  
+2. If the LO n bits of a binary number all contain zero, then the number is evenly divisible by 2^n.  
+3. If a binary value contains a one in bit position n, and zeros everywhere else, then that number is equal to 2^n.  
+4. If a binary value contains all ones from bit position zero up to (but not including) bit position n, and all other bits are zero, then that value is equal to (2^n)-1.  
+5. Shifting all the bits in a number to the left by one position multiplies the binary value by two.  
+6. Shifting all the bits of an unsigned binary number to the right by one position effectively divides that number by two (this does not apply to signed integer values). Odd numbers are rounded down.  
+7. Multiplying two n-bit binary values together may require as many as 2*n bits to hold the result.  
+8. Adding or subtracting two n-bit binary values never requires more than n+1 bits to hold the result.  
+9. Inverting all the bits in a binary number (that is, changing all the zeros to ones and all the ones to zeros) is the same thing as negating (changing the sign) of the value and then subtracting one from the result.  
+10. Incrementing (adding one to) the largest unsigned binary value for a given number of bits always produces a value of zero.  
+11. Decrementing (subtracting one from) zero always produces the largest unsigned binary value for a given number of bits.  
+12. An n-bit value provides 2^n unique combinations of those bits.  
+13. The value (2^n)-1 contains n bits, each containing the value one.  
+
+
+|  n | 2n     |
+|:---|:-------|
+| 0  | 1      |
+| 1  | 2      |
+| 2  | 4      |
+| 3  | 8      |
+| 4  | 16     |
+| 5  | 32     |
+| 6  | 64     |
+| 7  | 128    |
+| 8  | 256    |
+| 9  | 512    |
+| 10 | 1,024  |
+| 11 | 2,048  |
+| 12 | 4,096  |
+| 13 | 8,192  |
+| 14 | 16,384 |
+| 15 | 32,768 |
+| 16 | 65,536 |
+
