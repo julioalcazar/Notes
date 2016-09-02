@@ -19,3 +19,6 @@ ___Two's complement___
 __Property :__ Two's complement representation allows the use of binary arithmetic operations on signed integers, yielding the correct 2's complement results.  
 __Positive Numbers :__ Positive 2's complement numbers are represented as the simple binary.  
 __Negative Numbers :__ Negative 2's complement numbers are represented as the binary number that when added to a positive number of the same magnitude equals zero.  
+__Algorithm:__  
+1. Invert all the bits in the number, that is, change all the zeros to ones and all the ones to zeros.  
+2. Add one to the inverted result (ignoring any overflow).  
