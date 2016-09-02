@@ -1,4 +1,4 @@
-__Algebraic properties__  
+___Algebraic properties___  
 
 | Property          | Note 1           |Note 2    |  
 |:----------------- |:---------------- |:-------- |  
@@ -28,13 +28,13 @@ __Algebraic properties__
 |:----------------- |
 |![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/UnderstoodOnes.png) |
 
-__Parentheses, Brackets and Braces__  
+___Parentheses, Brackets and Braces___  
 **()** Parentheses  
 **[]** Square brackets  
 **{}** Braces  
 **<>** Angle brackets  
 
-__Order of operations__  
+___Order of operations___  
 **P** Parentheses  
 **E** Exponents  
 **M** Multiplication  
