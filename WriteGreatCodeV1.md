@@ -1,6 +1,6 @@
 #Write Great Code Volume I : Understanding the Machine  
   
-__Characteristics of Great Code__  
+___Characteristics of Great Code___  
 * Uses the CPU efficiently (which means the code is fast)
 * Uses memory efficiently (which means the code is small)
 * Uses system resources efficiently
@@ -11,6 +11,11 @@ __Characteristics of Great Code__
 * Is well-tested and robust (meaning that it works)
 * Is well-documented
 
-__C++ Representation of Numbering System__  
+___C++ Representation of Numbering System___  
 * Hexadecimal base by prefixing a "0x" eg: 0xdead 
 * Octal base by prefixing a numeric string with a zero eg: 0123 = 83.
+  
+___Two's complement___  
+__Property :__ Two's complement representation allows the use of binary arithmetic operations on signed integers, yielding the correct 2's complement results.  
+__Positive Numbers :__ Positive 2's complement numbers are represented as the simple binary.  
+__Negative Numbers :__ Negative 2's complement numbers are represented as the binary number that when added to a positive number of the same magnitude equals zero.  
