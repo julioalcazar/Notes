@@ -41,3 +41,12 @@ ___Order of operations___
 **D** Division  
 **A** Addition  
 **S** Subtraction  
+
+___Rational Numbers (fractions)___  
+Rational number is any number that can be expressed as the quotient or fraction p/q of two integers.  
+numerators/denominators  
+  
+Add/Subtract fractions:  
+Step 1: Make sure the bottom numbers (the denominators) are the same.
+Step 2: Add/Subtract the top numbers (the numerators), put the answer over the denominator
+Step 3: Simplify the fraction (if needed)
