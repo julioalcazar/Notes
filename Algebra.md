@@ -46,7 +46,12 @@ ___Rational Numbers (fractions)___
 Rational number is any number that can be expressed as the quotient or fraction p/q of two integers.  
 numerators/denominators  
   
-Add/Subtract fractions:  
-Step 1: Make sure the bottom numbers (the denominators) are the same.
-Step 2: Add/Subtract the top numbers (the numerators), put the answer over the denominator
-Step 3: Simplify the fraction (if needed)
+__Add/Subtract fractions__  
+Step 1: Make sure the bottom numbers (the denominators) are the same.  
+Step 2: Add/Subtract the top numbers (the numerators), put the answer over the denominator  
+Step 3: Simplify the fraction (if needed)  
+
+__Divide Fractions__  
+Step 1. Turn the second fraction (the one you want to divide by) upside down (this is now a reciprocal).  
+Step 2. Multiply the first fraction by that reciprocal  
+Step 3. Simplify the fraction (if needed)  
