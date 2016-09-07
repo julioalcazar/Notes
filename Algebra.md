@@ -55,3 +55,9 @@ __Divide Fractions__
 Step 1. Turn the second fraction (the one you want to divide by) upside down (this is now a reciprocal).  
 Step 2. Multiply the first fraction by that reciprocal  
 Step 3. Simplify the fraction (if needed)  
+
+__Mixed Number to Improper Fraction__  
+eg: 3 5/9  
+Step 1. Multiply the denominator by the whole number 9 × 3 = 27  
+Step 2. Add the answer from Step 1 to the numerator 27 + 5 = 32  
+Step 3. Write answer from Step 2 over the denominator 32/9  
