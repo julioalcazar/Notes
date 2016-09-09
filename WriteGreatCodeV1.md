@@ -59,3 +59,5 @@ ___Useful Properties of Binary Numbers___
 | 15 | 32,768 |
 | 16 | 65,536 |
 
+___Binary-Coded Decimal (BCD) Representation___  
+The binary-coded decimal (BCD) format, as its name suggests, encodes decimal values using a binary representation.  
