@@ -63,3 +63,5 @@ ___Binary-Coded Decimal (BCD) Representation___
 The binary-coded decimal (BCD) format, as its name suggests, encodes decimal values using a binary representation.  
 BCD values consist of a sequence of nibbles, with each nibble representing a value in the range 0..9. Of course, you can represent values in the range 0..15 using a nibble; the BCD format, however, uses only 10 of the possible 16 values. Each nibble represents a single decimal digit in a BCD value, so with a single byte we can represent values containing two decimal digits (0..99). With a word, we can represent values having four decimal digits (0..9999). Likewise, a double word can represent up to eight decimal digits.  
 
+___Fixed-Point Representation___  
+To represent a real number in computers (or any hardware in general), we can define a fixed point number type simply by implicitly fixing the binary point to be at some position of a numeral.  
