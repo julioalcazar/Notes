@@ -69,3 +69,13 @@ To represent a real number in computers (or any hardware in general), we can def
 ___Scaled Numeric Formats___  
   
   
+___Adding Binary Values___  
+
+* 0 + 0 = 0
+* 0 + 1 = 1
+* 1 + 0 = 1
+* 1 + 1 = 0 with carry
+* Carry + 0 + 0 = 1
+* Carry + 0 + 1 = 0 with carry
+* Carry + 1 + 0 = 0 with carry
+* Carry + 1 + 1 = 1 with carry
