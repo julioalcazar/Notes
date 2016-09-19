@@ -79,3 +79,15 @@ ___Adding Binary Values___
 * Carry + 0 + 1 = 0 with carry
 * Carry + 1 + 0 = 0 with carry
 * Carry + 1 + 1 = 1 with carry
+
+
+___Subtracting Binary Values___  
+* 0 - 0 = 0
+* 0 - 1 = 1 with a borrow
+* 1 - 0 = 1
+* 1 - 1 = 0
+* 0 - 0 - borrow = 1 with a borrow
+* 0 - 1 - borrow = 0 with a borrow
+* 1 - 0 - borrow = 0
+* 1 - 1 - borrow = 1 with a borrow
+ 
