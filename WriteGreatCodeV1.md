@@ -65,3 +65,7 @@ BCD values consist of a sequence of nibbles, with each nibble representing a val
 
 ___Fixed-Point Representation___  
 To represent a real number in computers (or any hardware in general), we can define a fixed point number type simply by implicitly fixing the binary point to be at some position of a numeral.  
+
+___Scaled Numeric Formats___  
+  
+  
