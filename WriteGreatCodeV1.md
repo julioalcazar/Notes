@@ -80,7 +80,6 @@ ___Adding Binary Values___
 * Carry + 1 + 0 = 0 with carry
 * Carry + 1 + 1 = 1 with carry
 
-
 ___Subtracting Binary Values___  
 * 0 - 0 = 0
 * 0 - 1 = 1 with a borrow
