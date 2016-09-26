@@ -2,6 +2,7 @@
 
 __Math__  
 [Algebra](https://github.com/amroibrahim/Notes/blob/master/Algebra.md)  
+[Statistics](https://github.com/amroibrahim/Notes/blob/master/Statistics.md)
 
 __Science__  
 [Physics](https://github.com/amroibrahim/Notes/blob/master/Physics.md)  
