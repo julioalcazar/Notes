@@ -11,3 +11,7 @@ Given order statistics Y is sorted, the statistical median of the random sample 
   
 ###Mode  
 The most common value obtained in a set of observations. For example, for a data set (3, 7, 3, 9, 9, 3, 5, 1, 8, 5), the unique mode is 3. Similarly, for a data set (2, 4, 9, 6, 4, 6, 6, 2, 8, 2), there are two modes: 2 and 6. A distribution with a single mode is said to be unimodal. A distribution with more than one mode is said to be bimodal, trimodal, etc., or in general, multimodal.  
+
+###Weighted Mean
+A mean where some values contribute more than others  
+![Weighted Mean](https://github.com/amroibrahim/Notes/blob/master/Images/Statistics/WeightedMean.png)  
