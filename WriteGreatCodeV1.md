@@ -90,3 +90,27 @@ ___Subtracting Binary Values___
 * 1 - 0 - borrow = 0
 * 1 - 1 - borrow = 1 with a borrow
  
+___Multiplying Binary Values___
+* 0 x 0 = 0
+* 0 x 1 = 0
+* 1 x 0 = 0
+* 1 x 1 = 1
+
+___Logical Operations on Bits___
+AND:
+* 0 and 0 = 0
+* 0 and 1 = 0
+* 1 and 0 = 0
+* 1 and 1 = 1
+
+OR:
+* 0 or 0 = 0
+* 0 or 1 = 1
+* 1 or 0 = 1
+* 1 or 1 = 1
+
+XOR:
+* 0 xor 0 = 0
+* 0 xor 1 = 1
+* 1 xor 0 = 1
+* 1 xor 1 = 0
