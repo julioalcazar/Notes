@@ -61,3 +61,12 @@ eg: 3 5/9
 Step 1. Multiply the denominator by the whole number 9 × 3 = 27  
 Step 2. Add the answer from Step 1 to the numerator 27 + 5 = 32  
 Step 3. Write answer from Step 2 over the denominator 32/9  
+
+__Polynomials__  
+polynomial is an expression consisting of variables and coefficients which only employs the operations of addition, subtraction, multiplication, and non-negative integer exponents.  
+Polynomial comes from poly- (meaning "many") and -nomial (in this case meaning "term")... so it says "many terms".  
+![Polynomial](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/polynomial.png)  
+  
+__Rational Expressions__  
+A rational expression is nothing more than a fraction in which the numerator and/or the denominator are polynomials.  
+![Rational Expressions](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/RationalExpressions.png)  
