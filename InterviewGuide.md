@@ -235,3 +235,14 @@ __Interviewer Evaluation criteria__
 *  Inventing and flexible?
 *  Open to new ideas?
 *  Can questions move up to more complex problem solving?
+
+---  
+
+__7 Steps to Solve Algorithms Problems__  
+1. Listen  
+2. Add more example (no special cases)  
+3. State a Brute force algorithm (you don’t have to code it)  
+4. Optimize  
+5. Walk thought your algorithm (Know exactly what you’re going to do before coding, what variables, what data structure).  
+6. Start coding (code style matters) 
+7. Test (small test case, edge test case, large test case)
