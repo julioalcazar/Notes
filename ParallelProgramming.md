@@ -9,3 +9,15 @@ Parallelism manifests itself at different granularity levels
   *  bit-level parallelism – processing multiple bits of data in parallel
   *  instruction-level parallelism – executing different instructions from the same instruction stream in parallel
   *  task-level parallelism – executing separate instruction streams in parallel
+
+___Process___  
+  *  an instance of a program that is executing in the OS.
+  *  The same program can be started as a process more than once, or even simultaneously in the same OS. 
+  *  The operating system multiplexes many different processes and a limited number of CPUs, so that they get time slices of execution. This mechanism is called multitasking.
+  *  Two different processes cannot access each other’s memory directly – they are isolated.
+  
+___Threads___  
+  *  Each process can contain multiple independent concurrency units called threads.
+  *  Threads can be started from within the same program, and they share the same memory address space.
+  *  Each thread has a program counter and a program stack.
+  *  threads cannot modify each other’s stack memory. They can only modify the heap memory.
