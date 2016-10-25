@@ -12,7 +12,7 @@ __Code__
 [BitHacks](https://github.com/amroibrahim/Notes/blob/master/BitHacks.md)  
 [Boolean Algebra](https://github.com/amroibrahim/Notes/blob/master/BooleanAlgebra.md)  
 [C++](https://github.com/amroibrahim/Notes/blob/master/CPP.md)  
-[Discrete Optimization](https://github.com/amroibrahim/Notes/blob/master/DiscreteOptimization.md)
+[Discrete Optimization](https://github.com/amroibrahim/Notes/blob/master/DiscreteOptimization.md)  
 [Write Great Code V1](https://github.com/amroibrahim/Notes/blob/master/WriteGreatCodeV1.md)  
 
 __Design__  
