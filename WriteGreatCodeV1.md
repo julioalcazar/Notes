@@ -115,3 +115,10 @@ XOR:
 * 0 xor 1 = 1
 * 1 xor 0 = 1
 * 1 xor 1 = 0
+
+__Floating-Point Arithmetic___  
+Comparing floating-point numbers is very dangerous. Given the inaccuracies present in any computation (including converting an input string to a floating-point value), you should never compare two floating-point values to see if they are equal.  
+The standard way to test for equality between floating-point numbers is to determine how much error (or tolerance) you will allow in a comparison, and then check to see if one value is within this error range of the other. The straightforward way to do this is to use a test like the following.  
+*  if( (Value1 >= (Value2 − error)) and (Value1 <= (Value2 + error)) then...  
+A more efficient way to handle this is to use a statement of the form:  
+*  if( abs(Value1 − Value2) <= error ) then . . .  
