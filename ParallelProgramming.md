@@ -21,3 +21,9 @@ ___Threads___
   *  Threads can be started from within the same program, and they share the same memory address space.
   *  Each thread has a program counter and a program stack.
   *  threads cannot modify each other’s stack memory. They can only modify the heap memory.
+
+___Atomicity___  
+  *  An operation is atomic if it appears as if it occurred instantaneously from the point of view of other threads.  
+  *  An atomic process means a process which is not divisible or should not divide.  
+  *  The sequence of statements in two separate threads should execute in a specific order, and not overlap.  
+  
