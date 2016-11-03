@@ -28,5 +28,5 @@ ___Atomicity___
   *  The sequence of statements in two separate threads should execute in a specific order, and not overlap.  
   
 ___Deadlocks___  
-Deadlock is a scenario in which two or more threads compete for resources (such as monitor ownership), and wait for each to finish without releasing the already acquired resources.  
+  *  Deadlock is a scenario in which two or more threads compete for resources (such as monitor ownership), and wait for each to finish without releasing the already acquired resources.  
 
