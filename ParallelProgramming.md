@@ -29,4 +29,4 @@ ___Atomicity___
   
 ___Deadlocks___  
   *  Deadlock is a scenario in which two or more threads compete for resources (such as monitor ownership), and wait for each to finish without releasing the already acquired resources.  
-
+  *  Resolving deadlocks: One approach is to always acquire resources in the same order. This assumes an ordering relationship on the resources.  
