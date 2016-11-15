@@ -338,3 +338,5 @@ ___Memoization (Top Down)___ The memoized program for a problem is similar to th
 ___Tabulation (Bottom Up)___ The tabulated program for a given problem builds a table in bottom up fashion and returns the last entry from table.  
 
 Both tabulated and Memoized store the solutions of subproblems. In Memoized version, table is filled on demand while in tabulated version, starting from the first entry, all entries are filled one by one. Unlike the tabulated version, all entries of the lookup table are not necessarily filled in memoized version.  
+
+___Optimal Substructure___ A given problems has Optimal Substructure Property if optimal solution of the given problem can be obtained by using optimal solutions of its subproblems.  
