@@ -70,3 +70,5 @@ Polynomial comes from poly- (meaning "many") and -nomial (in this case meaning "
 __Rational Expressions__  
 A rational expression is nothing more than a fraction in which the numerator and/or the denominator are polynomials.  
 ![Rational Expressions](https://github.com/amroibrahim/Notes/blob/master/Images/Algebra/RationalExpressions.png)  
+
+  
