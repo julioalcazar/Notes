@@ -129,4 +129,5 @@ ASCII Character Set: The ASCII (American Standard Code for Information Interchan
 * The second group of 32 ASCII character codes comprises various punctuation symbols, special characters, and the numeric digits.  
 * The third group of 32 ASCII characters contains the uppercase alphabetic characters.
 * The fourth and final group of 32 ASCII character codes represents the lowercase alphabetic symbols, five additional special symbols, and another control character (delete).  
+  
 If you convert the codes for the upper and lowercase characters to binary, you will notice that the uppercase symbols differ from their lowercase equivalents in exactly one bit position. The only place these two codes differ is in bit five. Uppercase alphabetic characters always contain a zero in bit five; lowercase alphabetic characters always contain a one in bit five.
