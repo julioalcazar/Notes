@@ -116,9 +116,17 @@ XOR:
 * 1 xor 0 = 1
 * 1 xor 1 = 0
 
-__Floating-Point Arithmetic___  
+___Floating-Point Arithmetic___  
 Comparing floating-point numbers is very dangerous. Given the inaccuracies present in any computation (including converting an input string to a floating-point value), you should never compare two floating-point values to see if they are equal.  
 The standard way to test for equality between floating-point numbers is to determine how much error (or tolerance) you will allow in a comparison, and then check to see if one value is within this error range of the other. The straightforward way to do this is to use a test like the following.  
 *  if( (Value1 >= (Value2 − error)) and (Value1 <= (Value2 + error)) then...  
 A more efficient way to handle this is to use a statement of the form:  
 *  if( abs(Value1 − Value2) <= error ) then . . .  
+
+___Character Representation___  
+ASCII Character Set: The ASCII (American Standard Code for Information Interchange) character set maps 128 characters to the unsigned integer values 0..127  
+* The ASCII character set is divided into four groups of 32 characters. The first 32 characters, ASCII codes 0x00 through 0x1F (0 through 31), form a special set of nonprinting characters called the control characters.  
+* The second group of 32 ASCII character codes comprises various punctuation symbols, special characters, and the numeric digits.  
+* The third group of 32 ASCII characters contains the uppercase alphabetic characters.
+* The fourth and final group of 32 ASCII character codes represents the lowercase alphabetic symbols, five additional special symbols, and another control character (delete).  
+If you convert the codes for the upper and lowercase characters to binary, you will notice that the uppercase symbols differ from their lowercase equivalents in exactly one bit position. The only place these two codes differ is in bit five. Uppercase alphabetic characters always contain a zero in bit five; lowercase alphabetic characters always contain a one in bit five.
