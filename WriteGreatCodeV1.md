@@ -124,10 +124,38 @@ A more efficient way to handle this is to use a statement of the form:
 *  if( abs(Value1 − Value2) <= error ) then . . .  
 
 ___Character Representation___  
-ASCII Character Set: The ASCII (American Standard Code for Information Interchange) character set maps 128 characters to the unsigned integer values 0..127  
+**ASCII Character Set:** The ASCII (American Standard Code for Information Interchange) character set maps 128 characters to the unsigned integer values 0..127  
 * The ASCII character set is divided into four groups of 32 characters. The first 32 characters, ASCII codes 0x00 through 0x1F (0 through 31), form a special set of nonprinting characters called the control characters.  
 * The second group of 32 ASCII character codes comprises various punctuation symbols, special characters, and the numeric digits.  
 * The third group of 32 ASCII characters contains the uppercase alphabetic characters.
 * The fourth and final group of 32 ASCII character codes represents the lowercase alphabetic symbols, five additional special symbols, and another control character (delete).  
   
-If you convert the codes for the upper and lowercase characters to binary, you will notice that the uppercase symbols differ from their lowercase equivalents in exactly one bit position. The only place these two codes differ is in bit five. Uppercase alphabetic characters always contain a zero in bit five; lowercase alphabetic characters always contain a one in bit five.
+If you convert the codes for the upper and lowercase characters to binary, you will notice that the uppercase symbols differ from their lowercase equivalents in exactly one bit position. The only place these two codes differ is in bit five. Uppercase alphabetic characters always contain a zero in bit five; lowercase alphabetic characters always contain a one in bit five.  
+
+**EBCDIC Character Set:** an acronym that stands for Extended Binary Coded Decimal Interchange Code. BCDIC is that it is not a single character set; rather, it is a family of character sets.  
+
+**Double-Byte Character Sets:** A typical double-byte character set utilizes the standard ASCII character set along with several additional characters in the range $80..$FF.  
+
+**Unicode Character Set:** Unicode uses a 16-bit word to represent each character.  
+
+___Character Strings___
+**Zero-Terminated Strings**  
+**Advantages**  
+*  Zero-terminated strings can represent strings of any practical length with only one byte of overhead (two bytes in Unicode).
+*  Given the popularity of the C/C++ programming languages, highperformance string processing libraries are available that work well with zero-terminated strings.  
+*  Zero-terminated strings are easy to implement. Indeed, except for dealing with string literal constants, the C/C++ programming languages don’t provide native string support. As far as the C and C++ languages are concerned, strings are just arrays of characters. That’s probably why C’s designers chose this format in the first place — so they wouldn’t have to clutter up the language with string operators.  
+*  This format allows you to easily represent zero-terminated strings in any language that provides the ability to create an array of characters.  
+
+**Disadvantages**  
+*  String functions often aren’t very efficient when operating on zeroterminated strings. Many string operations need to know the length of the string before working on the string data. The only reasonable way to compute the length of a zero-terminated string is to scan the string from the beginning to the end. The longer your strings are, the slower this function runs. Therefore, the zero-terminated string format isn’t the best choice if you need to process long strings.
+*  Though this is a minor problem, with the zero-terminated string format you cannot easily represent any character whose character code is zero (such as the ASCII NUL character).  
+*  With zero-terminated strings there is no information contained within the string data itself that tells you how long a string can grow beyond the terminating zero byte. Therefore, some string functions, like concatenation, can only extend the length of an existing string variable and check for overflow if the caller explicitly passes in the maximum length.
+
+**Length-Prefixed Strings**  
+**Seven-Bit Strings**  
+An interesting string format that works for 7-bit codes like ASCII involves using the Hight bit to indicate the end of the string. All but the last character code in the string would have their HO bit clear (or set, your choice) and the last character in the string would have its HO bit set (or clear, if all the other HO bits are set).
+This 7-bit string format has several disadvantages:
+*  You have to scan the entire string in order to determine the length of the string.
+*  You cannot have zero-length strings in this format.
+*  Few languages provide literal string constants for 7-bit strings.
+*  You are limited to a maximum of 128 character codes, though this is fine when using plain ASCII.
