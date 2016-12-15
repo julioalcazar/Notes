@@ -158,4 +158,6 @@ This 7-bit string format has several disadvantages:
 *  You have to scan the entire string in order to determine the length of the string.
 *  You cannot have zero-length strings in this format.
 *  Few languages provide literal string constants for 7-bit strings.
-*  You are limited to a maximum of 128 character codes, though this is fine when using plain ASCII.
+*  You are limited to a maximum of 128 character codes, though this is fine when using plain ASCII.  
+
+**HLA Strings**  
