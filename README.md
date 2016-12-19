@@ -14,6 +14,7 @@ __Code__
 [C++](https://github.com/amroibrahim/Notes/blob/master/CPP.md)  
 [Discrete Optimization](https://github.com/amroibrahim/Notes/blob/master/DiscreteOptimization.md)  
 [Parallel Programming](https://github.com/amroibrahim/Notes/blob/master/ParallelProgramming.md)  
+[Sorting](https://github.com/amroibrahim/Notes/blob/master/Sorting.md)  
 [Write Great Code V1](https://github.com/amroibrahim/Notes/blob/master/WriteGreatCodeV1.md)  
 
 __Design__  
