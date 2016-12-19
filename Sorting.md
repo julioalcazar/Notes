@@ -60,7 +60,7 @@ Advantage
 
 ##External merge sort  
 which sorts chunks that each fit in RAM, then merges the sorted chunks together.For example, for sorting 900 megabytes of data using only 100 megabytes of RAM.  
-[External sorting](https://en.wikipedia.org/wiki/External_sorting)  
+[Wikipedia External sorting](https://en.wikipedia.org/wiki/External_sorting)  
   
 
 ##Quick Sort
