@@ -22,6 +22,5 @@
 *  What are the bounds of use?
 *  What are the stress conditions/failure conditions
 
-asdfasd
 
 
