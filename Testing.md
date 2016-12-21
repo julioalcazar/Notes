@@ -28,6 +28,8 @@ Step 1: Define the test cases
 *  The extremes  
 *  Nulls and "illegal"  
 *  Strange Input  
+
 Step 2: Define the expected result  
+
 Step 3: Write test code  
   
