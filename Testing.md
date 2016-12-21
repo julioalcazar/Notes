@@ -12,3 +12,5 @@
 *  What are the bounds of use?
 *  What are the stress/failure conditions.
 *  How would you perform the testing?
+
+##Testnig a piece of Software
