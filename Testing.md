@@ -22,5 +22,10 @@
 *  What are the bounds of use?
 *  What are the stress conditions/failure conditions
 
-
-
+##Testing a function
+Step 1: Define the test cases
+*  The normal case
+*  The extremes
+*  Nulls and "illegal"
+*  Strange Input
+Step 2: 
