@@ -162,3 +162,6 @@ This 7-bit string format has several disadvantages:
 
 **HLA Strings**  
 The HLA string format uses a 4-byte length prefix, allowing character strings to be just over four billion characters long (obviously, this is far more than any practical application will use). HLA also sticks a zero byte at the end of the character string data, so HLA strings are upward compatible with string functions that reference (but do not change the length of) zeroterminated strings. The additional four bytes of overhead in an HLA string contain the maximum legal length for that string. Having this extra field allows HLA string functions to check for string overflow, if necessary.
+
+**Descriptor-Based Strings**  
+The string formats we’ve considered up to this point have kept the attribute information (the lengths and terminating bytes) for a string in memory along with the character data.  
