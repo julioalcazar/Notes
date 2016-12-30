@@ -167,3 +167,5 @@ The HLA string format uses a 4-byte length prefix, allowing character strings to
 The string formats we’ve considered up to this point have kept the attribute information (the lengths and terminating bytes) for a string in memory along with the character data.  
 
 ___The Basic System Components___
+
+![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/WriteGreatCodeV1/Components.png) 
