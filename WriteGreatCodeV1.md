@@ -165,3 +165,5 @@ The HLA string format uses a 4-byte length prefix, allowing character strings to
 
 **Descriptor-Based Strings**  
 The string formats we’ve considered up to this point have kept the attribute information (the lengths and terminating bytes) for a string in memory along with the character data.  
+
+___The Basic System Components___
