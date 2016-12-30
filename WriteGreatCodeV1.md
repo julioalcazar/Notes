@@ -169,3 +169,8 @@ The string formats we’ve considered up to this point have kept the attribute i
 ___The Basic System Components___
 
 ![Image of Yaktocat](https://github.com/amroibrahim/Notes/blob/master/Images/WriteGreatCodeV1/Components.png) 
+
+**The System Bus**
+*  Address Bus 
+*  Data Bus
+*  Control Bus
