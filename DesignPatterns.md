@@ -1,5 +1,14 @@
 __Creational Design Patterns__
 
+___Singleton___  
+A class of which only a single instance can exist  
+*  Intent
+  *  Ensure a class has only one instance, and provide a global point of  access to it.  
+  *  Encapsulated "just-in-time initialization" or "initialization on first use".  
+*  Problem
+  *  Application needs one, and only one, instance of an object.
+  *  Additionally, lazy initialization and global access are necessary.
+
 ___Abstract Factory___  
 *  Intent
   *  Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
@@ -21,5 +30,3 @@ Avoid expensive acquisition and release of resources by recycling objects that a
 ___Prototype___  
 A fully initialized instance to be copied or cloned  
 
-___Singleton___  
-A class of which only a single instance can exist  
