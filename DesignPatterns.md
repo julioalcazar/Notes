@@ -20,7 +20,12 @@ ___Abstract Factory___
 
 ___Builder___  
 Separates object construction from its representation  
-
+*  Intent
+  *  Separate the construction of a complex object from its representation so that the same construction process can create different representations.  
+  *  Parse a complex representation, create one of several targets.  
+*  Problem
+  *  An application needs to create the elements of a complex aggregate.   
+  
 ___Factory Method___  
 Creates an instance of several derived classes  
 
