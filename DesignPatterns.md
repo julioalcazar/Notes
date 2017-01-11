@@ -9,6 +9,14 @@ A class of which only a single instance can exist
   *  Application needs one, and only one, instance of an object.
   *  Additionally, lazy initialization and global access are necessary.
 
+___Builder___  
+Separates object construction from its representation  
+*  Intent
+  *  Separate the construction of a complex object from its representation so that the same construction process can create different representations.  
+  *  Parse a complex representation, create one of several targets.  
+*  Problem
+  *  An application needs to create the elements of a complex aggregate.   
+
 ___Abstract Factory___  
 *  Intent
   *  Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
@@ -17,15 +25,6 @@ ___Abstract Factory___
 *  Problem  
   *  If an application is to be portable, it needs to encapsulate platform dependencies. These "platforms" might include: windowing system, operating system, database, etc. Too often, this encapsulatation is not engineered in advance, and lots of #ifdef case statements with options for all currently supported platforms begin to procreate like rabbits throughout the code.
 
-
-___Builder___  
-Separates object construction from its representation  
-*  Intent
-  *  Separate the construction of a complex object from its representation so that the same construction process can create different representations.  
-  *  Parse a complex representation, create one of several targets.  
-*  Problem
-  *  An application needs to create the elements of a complex aggregate.   
-  
 ___Factory Method___  
 Creates an instance of several derived classes  
 
