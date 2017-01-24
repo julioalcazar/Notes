@@ -13,6 +13,7 @@ __Code__
 [Boolean Algebra](https://github.com/amroibrahim/Notes/blob/master/BooleanAlgebra.md)  
 [C++](https://github.com/amroibrahim/Notes/blob/master/CPP.md)  
 [Discrete Optimization](https://github.com/amroibrahim/Notes/blob/master/DiscreteOptimization.md)  
+[Machine Learning](https://github.com/amroibrahim/Notes/blob/master/MachineLearning.md)  
 [Parallel Programming](https://github.com/amroibrahim/Notes/blob/master/ParallelProgramming.md)  
 [Sorting](https://github.com/amroibrahim/Notes/blob/master/Sorting.md)  
 [Testing](https://github.com/amroibrahim/Notes/blob/master/Testing.md)  
