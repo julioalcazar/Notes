@@ -1,3 +1,37 @@
+#Algorithms  
+  
+## Dynamic connectivity  
+  
+###### Given a set of N objects  
+* Union command: connect two objects  
+* Find/connected query: is there a path connecting the two objects?  
+
+---
+
+###### Applications  
+* Pixels in a digital photo.  
+* Computers in a network.  
+* Friends in a social network.  
+* Transistors in a computer chip.  
+* Elements in a mathematical set.  
+* Variable names in Fortran program.  
+* Metallic sites in a composite system.  
+
+---
+
+###### It is assumed that "is connected to" is an equivalence relation:  
+* Reflexive: p is connected to p.  
+* Symmetric: if p is connected to q, then q is connected to p.  
+* Transitive: if p is connected to q and q is connected to r, then p is connected to r.  
+
+---
+
+| Algorithm  | Initialize  | Union  | Connected  | Note  |
+| ---------- |:-----------:|:------:|:----------:|:-----:|
+| Quick-Find  | N | N | 1 |  Eager approach|
+| Quick-Union  | N | N | N ||
+| Weighted Quick-Union  | N | lg N | lg N ||
+
 ##Contiguous vs. Linked Data Structures  
 Data structures can be neatly classified as either contiguous or linked, depending upon whether they are based on arrays or pointers:  
 * __Contiguously-allocated structures__ are composed of single slabs of memory, and include arrays, matrices, heaps, and hash tables.  
