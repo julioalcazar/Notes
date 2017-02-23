@@ -64,3 +64,12 @@ Example of a single iteration
   
 ---
   
+| Size (Bytes)      | Prefix           |
+| ------------------|:----------------:|
+| 1 (8 bits)        | Byte             |
+| 1,000             | Kilo (Thousand)  |
+| 1,000,000         | Mega (Million)   |
+| 1,000,000,000     | Giga (Billion)   |
+| 1,000,000,000,000 | Tera (Trillion)  |
+
+---
