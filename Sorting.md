@@ -57,12 +57,12 @@ Advantage
 *  Guarantee O(N log N) performance   
 *  Non-recursive implementation 
   
-
+  
 ##External merge sort  
 which sorts chunks that each fit in RAM, then merges the sorted chunks together.For example, for sorting 900 megabytes of data using only 100 megabytes of RAM.  
 [Wikipedia External sorting](https://en.wikipedia.org/wiki/External_sorting)  
   
-
+  
 ##Quick Sort
 __Time Complexity:__ Average O(N Log N), Worst O(N^2)  
 __Auxiliary Space:__ O(1)  
@@ -87,8 +87,22 @@ Merge Sort execute the recursion before the work.
 Heap sort is an in place sorting algorithm with N log N worst-case.  
 1.  Build max Heap using bottom-up method (Start with nodes with children, 1 Node heaps are ignored "already already sorted").  
 2.  Reapeatedly delete the largest remaining items.  
-    
+  
+  
 Heaps are usually implemented using arrays. This representation is that the positions of the parent and children of the key at position k are readily determined. The left child of k sits in position 2k and the right child in 2k + 1, while the parent of k holds court in position n/2. Thus we can move around the tree without any pointers.  
 *  Inner loop longer than quicksort's.  
 *  Makes poor use of cache memory.  
 *  Not stable.  
+  
+  
+##Bitmap Sort
+__Time Complexity:__ O(N) 
+__Auxiliary Space:__ O(N)  
+__Stable:__ N/A (elements are unique)
+This algorithm works on unique integers in a given range, with no data associated with it.
+
+  
+##Count Sort
+__Time Complexity:__ O(N) 
+__Auxiliary Space:__ O(N) 
+__Stable:__ Yes (depends on implementation)
