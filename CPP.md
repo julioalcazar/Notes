@@ -289,10 +289,10 @@ decltype(auto) f3 = foo();
 
 
 **The Compiler will generate the following by default**
-1.	Default constructor
-2.	Copy constructor
-3.	Copy assignment operator
-4.	Default destructor
+ 1. Default constructor
+ 2. Copy constructor
+ 3.	Copy assignment operator
+ 4.	Default destructor
 
 **When You Need a Default Constructor**
 Consider arrays of objects. The act of creating an array of objects accomplishes two tasks: It allocates contiguous memory space for all the objects and it calls the default constructor on each object. C++ fails to provide any syntax to tell the array creation code directly to call a different constructor. For example, if you do not define a default constructor for the SpreadsheetCell class, the following code does not compile:
@@ -351,8 +351,8 @@ classname::classname(const classname& src) :
    m1(src.m1), m2(src.m2), ... mn(src.mn) { }
 ```
 **When the copy constructor Is called**
-1.	pass-by-value
-2.	Whenever you return an object from a function or method.
+ 1.	pass-by-value
+ 2.	Whenever you return an object from a function or method.
 
 **Calling the copy constructor explicitly**  
 You can use the copy constructor explicitly
