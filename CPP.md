@@ -462,3 +462,32 @@ However:
 anotherCell = myCell; // Calls operator= for anotherCell.
 ```
 Here anotherCell has already been constructed, so the compiler calls operator=
+
+**Objects as Return Values**
+``` cpp
+SpreadsheetCell myCell2(5);
+string s1;
+s1 = myCell2.getString();
+```
+When getString() returns mString, the compiler actually creates an unnamed temporary string object by calling a string copy constructor. When you assign this result to s1, the assignment operator is called for s1 with the temporary string as a parameter. Then, the temporary string object is destroyed. Thus, the single line of code invokes the copy constructor and the assignment operator (for two different objects).
+Consider this code:
+``` cpp
+SpreadsheetCell myCell3(5);
+string s2 = myCell3.getString();
+```
+In this case, getString() still creates a temporary unnamed string object when it returns mString. But now s2 gets its copy constructor called, not its assignment operator. With move semantics from C++11, the compiler can use a move constructor instead of a copy constructor to return mString from getString(). This is much more efficient.
+
+**2D Array allocation and Visualization**
+``` cpp
+Spreadsheet::Spreadsheet(int inWidth, int inHeight) : 
+mWidth(inWidth), mHeight(inHeight) {
+   mCells = new SpreadsheetCell* [mWidth];
+   for (int i = 0; i < mWidth; i++) {
+      mCells[i] = new SpreadsheetCell[mHeight];
+   }
+}
+```
+The resultant memory for a Spreadsheet called s1 on the stack with width four and height three is shown
+![Memory](https://github.com/amroibrahim/Notes/blob/master/Images/CPP/Memory1.png)  
+
+**Assignment operators must free memory first**
