@@ -854,15 +854,15 @@ int main() {
 The output of this code is a shockingly terse "1231".
 
 **Referring to Parent Names** 
-```
-Microsoft Visual C++ supports the __super keyword (with two underscores).
-This allows you to write the following:
-return __super::getTemperature() + "\u00B0F";
-```
 ``` cpp
 string MyWeatherPrediction::getTemperature() const
 {
    // Note: \u00B0 is the ISO/IEC 10646 representation of the degree symbol.
    return WeatherPrediction::getTemperature() + "\u00B0F";
 }
+```
+```
+Microsoft Visual C++ supports the __super keyword (with two underscores).
+This allows you to write the following:
+return __super::getTemperature() + "\u00B0F";
 ```
