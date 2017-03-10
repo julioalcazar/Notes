@@ -8,8 +8,7 @@
 ``` cpp
 //Range-Based for Loop Sample  
 std::array<int, 4> arr = {1, 2, 3, 4};
-for (int i : arr) 
-{
+for (int i : arr) {
    std::cout << i << std::endl;
 }
 ``` 
@@ -21,8 +20,7 @@ for (int i : arr)
   
 **Switch:** Can only compare between a variable and a constant, but not variable and variable.
 ``` cpp
-switch (someItem) 
-{
+switch (someItem) {
 case 1:
    // Code to do something
    break;
@@ -39,13 +37,11 @@ default:
 You can’t pass an array by value, pass by address.
 
 ``` cpp
-void somefunction(int arg[], int size)
-{
+void somefunction(int arg[], int size) {
    ...
 }
 
-int main()
-{
+int main() {
    int arr[50];
    somefunction(arr, (sizeof(arr)/sizeof(*arr))); //Only works if array is created in same scope
 }
@@ -150,8 +146,7 @@ Line 2 with \t)";
 
 **Enumerated Types**
 ``` cpp
-enum PieceType 
-{ 
+enum PieceType  { 
    PieceTypeKing,
    PieceTypeQueen,
    PieceTypeRook,
@@ -165,8 +160,7 @@ Behind the scenes, an enumerated type is just an integer value. The real value o
     Enumerations as explained above are not strongly typed, meaning they are not type-safe. They are always interpreted as integers, and thus you can compare enumeration values from completely different enumeration types. The enum class solves these problems.
 
 ``` cpp
-enum class MyEnum
-{
+enum class MyEnum {
    EnumValue1,
    EnumValue2 = 10,
    EnumValue3
@@ -181,8 +175,7 @@ if (MyEnum::EnumValue3 == 11) {...}
 **Alternative Function Syntax**
 The following example demonstrates the alternative function syntax. The auto keyword in this context has the meaning of starting a function prototype using the alternative function syntax
 ``` cpp
-auto func(int i) -> int
-{
+auto func(int i) -> int {
    return i + 2;
 }
 ```
@@ -196,16 +189,14 @@ auto x = 123; // x will be of type int
 
 2. The second use of the auto keyword is for the alternative function syntax.
 ``` cpp
-auto func(int i) -> int
-{
+auto func(int i) -> int {
    return i + 2;
 }
 ```
 
 3. The third use of the auto keyword is for function return type deduction
 ``` cpp
-auto divideNumbers(double numerator, double denominator)
-{
+auto divideNumbers(double numerator, double denominator) {
    if (denominator == 0) { /* ... */ }
    return numerator / denominator;
 }
@@ -238,8 +229,7 @@ In this example, the compiler deduces the type of y to be int because that’s t
 Using auto to deduce the type of an expression strips away reference qualifiers and const qualifiers. decltype does not strip those but might cause code duplication.
 ``` cpp
 const string message = "Test";
-const string& foo()
-{
+const string& foo() {
    return message;
 }
 ```
@@ -328,8 +318,7 @@ cout << “cell 1: “ << myCell.getValue() << endl;
 **Explicitly Defaulted Constructors**
 This allows you to write the class definition as follows without the need to implement it in the implementation file.  
 ``` cpp
-class MyClass
-{
+class MyClass {
 public:
    MyClass() = default;
    MyClass(int i);
@@ -339,9 +328,137 @@ public:
 **Explicitly Deleted Constructors**
 C++11 also supports the concept of explicitly deleted constructors. For example, you can define a class for which you do not want to write any constructors and you also do not want the compiler to generate the default constructor.
 ``` cpp
-class MyClass
-{
+class MyClass {
 public:
    MyClass() = delete;
 };
 ```
+**Initialization list (ctor-initializer)**
+Must be used with the following
+
+| DATA TYPE | EXPLANATION | 
+| --------- |:----------- |
+| const data members |You cannot legally assign a value to a const variable after it is created. Any value must be supplied at the time of creation.|
+| Reference data members | References cannot exist without referring to something. |
+| Object data members for which there is no default constructor | C++ attempts to initialize member objects using a default constructor. If no default constructor exists, it cannot initialize the object. |
+| Object data members for which there is no default constructor | C++ attempts to initialize member objects using a default constructor. If no default constructor exists, it cannot initialize the object. |
+| Superclasses without default constructors | No default constuctors to call and create the object |
+
+**Default copy constructor**
+Given a set of member variables, called m1, m2, ... mn, the compiler-generated copy constructor can be expressed as:
+``` cpp
+classname::classname(const classname& src) :
+   m1(src.m1), m2(src.m2), ... mn(src.mn) { }
+```
+**When the copy constructor Is called**
+1.	pass-by-value
+2.	Whenever you return an object from a function or method.
+
+**Calling the copy constructor explicitly**  
+You can use the copy constructor explicitly
+``` cpp
+SpreadsheetCell myCell3(myCell2); 
+// myCell3 has the same values as myCell2
+```
+
+**Initializer-List Constructors**
+An initializer-list constructor is a constructor with ``` std::initializer_list<T> ``` as fi rst argument, without any additional arguments or with additional arguments having default values. Before you can use the ``` std::initializer_list<T> ``` template you need to include the ``` <initializer_list> ``` header.
+``` cpp
+class PointSequence {
+public:
+   PointSequence(initializer_list<double> args) {
+      if (args.size() % 2 != 0) {
+         throw invalid_argument("initializer_list should " "contain even number of elements.");
+      }
+
+      for (auto iter = args.begin(); iter != args.end(); ++iter)
+         mVecPoints.push_back(*iter);
+   }
+   
+   void dumpPoints() const {
+      for (auto citer = mVecPoints.cbegin();
+         citer != mVecPoints.cend(); citer += 2) {
+         cout << "(" << *citer << ", " << *(citer+1) << ")" << endl;
+      }
+   }
+protected:
+   vector<double> mVecPoints;
+};
+
+PointSequence p1 = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
+p1.dumpPoints();
+try {
+   PointSequence p2 = {1.0, 2.0, 3.0};
+} 
+catch (const invalid_argument& e) {
+   cout << e.what() << endl;
+}
+```
+
+**In-Class member initializers**
+Before C++11, only static const integral member variables could be initialized in the class definition.
+``` cpp
+#include <string>
+class MyClass {
+protected:
+   static const int kI1 = 1; // OK
+   static const std::string kStr = "test"; // Error: not integral type
+   static int sI2 = 2; // Error: not const
+   const int kI3 = 3; // Error: not static
+};
+```
+
+**Delegating Constructors**
+Delegating constructors allow constructors to call another constructor from the same class. However, this call cannot be placed in the constructor body; it should be in the constructor initializer.
+When this string constructor (the delegating constructor) is called, it will fi rst delegate the call to the target, double constructor. When the target constructor returns, the body of the delegating constructor will be executed.
+``` cpp
+SpreadsheetCell::SpreadsheetCell(const string& initialValue)
+: SpreadsheetCell(stringToDouble(initialValue)) {
+}
+```
+
+**Copy constructor**
+If you only define A copy constructor only, no default constructor generated by the compiler. As long as you don’t define a copy constructor explicitly, the compiler creates one for you. On the other hand, as soon as you define any constructor, the compiler stops generating a default constructor.
+
+**Destruction**
+Objects on the stack are destroyed in the reverse order of their declaration Objects on the stack are destroyed in the reverse order of their declaration. In the following code fragment, myCell2 is allocated before anotherCell2, so anotherCell2 is destroyed before myCell2
+``` cpp
+{
+   SpreadsheetCell myCell2(4);
+   SpreadsheetCell anotherCell2(5); // myCell2 constructed before anotherCell2
+} // anotherCell2 destroyed before myCell2
+```
+**Assignment Operator**
+``` cpp
+class SpreadsheetCell
+{
+public:
+   // Remainder of the class definition omitted for brevity
+   SpreadsheetCell& operator=(const SpreadsheetCell& rhs);
+   // Remainder of the class definition omitted for brevity
+};
+```
+
+Your assignment operator shouldn’t prohibit self-assignment, but also shouldn’t perform a full assignment if it happens. Thus, assignment operators should check for self-assignment at the beginning of the method and return immediately.
+``` cpp
+SpreadsheetCell& SpreadsheetCell::operator=(const SpreadsheetCell& rhs)
+{
+   if (this == &rhs) 
+   {
+      return *this;
+   }
+}
+```
+
+**Distinguishing Copying from Assignment**
+The following constructed with the copy constructor, because this is a declaration
+``` cpp
+SpreadsheetCell myCell(5);
+SpreadsheetCell anotherCell(myCell);
+SpreadsheetCell aThirdCell = myCell;
+```
+However:
+``` cpp
+anotherCell = myCell; // Calls operator= for anotherCell.
+```
+Here anotherCell has already been constructed, so the compiler calls operator=
