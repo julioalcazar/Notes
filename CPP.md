@@ -52,7 +52,7 @@ int main()
 ``` 
   
 **Wild pointer:** Pointer that have not been initialized.  
-**Using:** Never put a using directive or using declaration in a header file, otherwise you force it on everyone that is including your header. Variables
+**Using:** Never put a using directive or using declaration in a header file, otherwise you force it on everyone that is including your header.  
   
 **New vs Malloc**  
  1. **new & delete:** call constructor and destructor.  
@@ -179,7 +179,7 @@ if (MyEnum::EnumValue3 == 11) {...}
 ```
 
 **Alternative Function Syntax**
- The following example demonstrates the alternative function syntax. The auto keyword in this context has the meaning of starting a function prototype using the alternative function syntax
+The following example demonstrates the alternative function syntax. The auto keyword in this context has the meaning of starting a function prototype using the alternative function syntax
 ``` cpp
 auto func(int i) -> int
 {
@@ -188,7 +188,6 @@ auto func(int i) -> int
 ```
 
 **auto Keyword**
-
 The auto keyword has four completely different meanings.
 1. The first meaning is to tell the compiler to automatically deduce the type of a variable at compile time.
 ``` cpp
@@ -299,5 +298,50 @@ decltype(auto) f3 = foo();
 | private | Only member functions of the class can call private member functions and access private data members. Member functions in derived classes cannot access private members from a base class. |  Everything should be private by default, especially data members. You can provide protected getters and setters if you only want to allow derived classes to access them, and provide public getters and setters if you want clients to access them.|  
 
 
+**The Compiler will generate the following by default**
+1.	Default constructor
+2.	Copy constructor
+3.	Copy assignment operator
+4.	Default destructor
+
+**When You Need a Default Constructor**
+Consider arrays of objects. The act of creating an array of objects accomplishes two tasks: It allocates contiguous memory space for all the objects and it calls the default constructor on each object. C++ fails to provide any syntax to tell the array creation code directly to call a different constructor. For example, if you do not define a default constructor for the SpreadsheetCell class, the following code does not compile:
 ``` cpp
+SpreadsheetCell cells[3]; // FAILS compilation without default constructor
+SpreadsheetCell* myCellp = new SpreadsheetCell[10]; // Also FAILS
+```
+You can circumvent this restriction for stack-based arrays by using initializers like these:  
+``` cpp
+SpreadsheetCell cells[3] = {SpreadsheetCell(0), SpreadsheetCell(23),
+SpreadsheetCell(41)};
+```
+However, it is usually easier to ensure that your class has a default constructor if you intend to create arrays of objects of that class. If you haven’t defined your own constructors, the compiler will automatically create a default constructor for you. This compiler-generated constructor is discussed in a next section. A default constructor is also required for classes that you want to store in an STL container like std::vector.  Default constructors are also useful when you want to create objects of that class inside other classes, which is shown later in this chapter under the section Constructor Initializers.  
+
+**Using default constructors**
+Unfortunately, the line attempting to call the default constructor will compile. The line following it will not compile. The problem is that your compiler thinks the first line is actually a function declaration for a function with the name myCell that takes zero arguments and returns a SpreadsheetCell object. When it gets to the second line, it thinks that you’re trying to use a function name as an object!
+``` cpp
+SpreadsheetCell myCell(); // WRONG, but will compile.
+myCell.setValue(6); // However, this line will not compile.
+cout << “cell 1: “ << myCell.getValue() << endl;
+```
+
+**Explicitly Defaulted Constructors**
+This allows you to write the class definition as follows without the need to implement it in the implementation file.  
+``` cpp
+class MyClass
+{
+public:
+   MyClass() = default;
+   MyClass(int i);
+};
+```
+
+**Explicitly Deleted Constructors**
+C++11 also supports the concept of explicitly deleted constructors. For example, you can define a class for which you do not want to write any constructors and you also do not want the compiler to generate the default constructor.
+``` cpp
+class MyClass
+{
+public:
+   MyClass() = delete;
+};
 ```
