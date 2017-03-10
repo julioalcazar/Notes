@@ -818,7 +818,10 @@ If executed, this code will output "123321".
   
 **Non-Virtual Destructors** 
 ```
-Always make your destructors virtual! The compiler generated default destructor is not virtual, so you should define your own virtual destructor, at least for your parent classes.
+Always make your destructors virtual! 
+The compiler generated default destructor is not virtual, 
+so you should define your own virtual destructor, 
+at least for your parent classes.
 ```
 All destructors should be declared virtual. If the preceding destructors were not declared virtual, the code would continue to work fi ne. However, if code ever called delete on a superclass pointer that was really pointing to a subclass, the destruction chain would begin in the wrong place. For example, the following code is similar to the previous example but the destructors are not virtual. This becomes a problem when a Child object is accessed as a pointer to a Parent and deleted.
 ``` cpp
