@@ -71,7 +71,7 @@ int main() {
 - A floating point value: 3.14f  
 - A double floating point value: 3.14  
 - A single character: ‘a’  
-- A zero-terminated array of characters: “character array”  
+- A zero-terminated array of characters: "character array"  
 
 ``` cpp
 //C++14
@@ -284,7 +284,7 @@ decltype(auto) f3 = foo();
 | ACCESS SPECIFICATION | MEANING |  WHEN TO USE| 
 | -------------------- |:------- |:----------- |
 | public | Any code can call a public member function or access a public data member of an object. |  Behaviors (methods) that you want clients to use. Access methods for private and protected data members. |  
-| protected | Any member function of the class can call protected member functions and access protected data members. Member functions of a derived class can access protected members of a base class. |  “Helper” methods that you do not want clients to use.|  
+| protected | Any member function of the class can call protected member functions and access protected data members. Member functions of a derived class can access protected members of a base class. |  "Helper" methods that you do not want clients to use.|  
 | private | Only member functions of the class can call private member functions and access private data members. Member functions in derived classes cannot access private members from a base class. |  Everything should be private by default, especially data members. You can provide protected getters and setters if you only want to allow derived classes to access them, and provide public getters and setters if you want clients to access them.|  
 
 
@@ -312,7 +312,7 @@ Unfortunately, the line attempting to call the default constructor will compile.
 ``` cpp
 SpreadsheetCell myCell(); // WRONG, but will compile.
 myCell.setValue(6); // However, this line will not compile.
-cout << “cell 1: “ << myCell.getValue() << endl;
+cout << "cell 1: " << myCell.getValue() << endl;
 ```
 
 **Explicitly Defaulted Constructors**
@@ -492,3 +492,358 @@ The resultant memory for a Spreadsheet called s1 on the stack with width four an
 
 **Assignment operators must free memory first**
 ![Memory](https://github.com/amroibrahim/Notes/blob/master/Images/CPP/Memory2.png)  
+
+Not only do the mCells pointers in s1 and s2 point to the same memory, but also you have orphaned the memory to which mCells in s1 previously pointed. That is why in assignment operators you must fi rst free the memory referenced by the left-hand side, and then do a deep copy. (Whenever you have dynamically allocated memory in a class, you should write your own copy constructor and assignment operator to provide a deep copy of the memory.)
+
+**Assignment operator self-check**
+The first lines of code in any assignment operator checks for self-assignment.
+This self-assignment check is required, not only for effi ciency, but also for correctness. If the preceding self-assignment test was removed, the code will most likely crash on self-assignment, because the second step in the code deletes mCells for the left-hand side and afterwards copies mCells from the right-hand side to the left-hand side. In the case of self-assignment, both sides are the same, so during copying you would access dangling pointers.
+``` cpp
+Spreadsheet& Spreadsheet::operator=(const Spreadsheet& rhs) {
+   // Check for self-assignment.
+   if (this == &rhs) {
+      return *this;
+   }
+   
+   for (int i = 0; i < mWidth; i++) {
+      delete [] mCells[i];
+   }
+   delete [] mCells;
+   mCells = nullptr;
+…
+}
+```
+
+The assignment operator completes the "big 3" routines for managing dynamically allocated memory in an object: the destructor, the copy constructor, and the assignment operator.  Whenever you find yourself writing one of those methods you should write all of them. (Whenever a class dynamically allocates memory, write a destructor, copy constructor, and assignment operator.)
+
+**Smart Pointers**
+There are three smart pointer types in C++:
+``` cpp
+  std::unique_ptr
+  std::shared_ptr
+  std::weak_ptr
+```
+The unique_ptr is analogous to an ordinary pointer, except that it will automatically free the memory or resource when the unique_ptr goes out of scope or is deleted. A unique_ptr has sole ownership of the object pointed to. One advantage of the unique_ptr is that it simplifies coding where storage must be freed when an exceptional situation occurs. unique_ptr is a generic smart pointer that can point to any kind of memory. That’s why it is a template.  
+  
+shared_ptr allows for distributed "ownership" of the data. Each time a shared_ptr is assigned, a reference count is incremented indicating there is one more "owner" of the data. When a shared_ptr goes out of scope, the reference count is decremented. When the reference count goes to zero it means there is no longer any owner of the data, and the object referenced by the pointer is freed. You cannot store an array in a shared_ptr. Use std::make_shared<>() to create a shared_ptr.  
+  
+You can use weak_ptr to observe a shared_ptr without incrementing or decrementing the reference count of the linked shared_ptr.  
+``` cpp
+auto myCellp = make_unique<SpreadsheetCell>();
+// Equivalent to:
+unique_ptr<SpreadsheetCell> myCellp(new SpreadsheetCell());
+```
+**Static Data Members**
+Static Data Members  are initialized to 0 by default. Static pointers are initialized to nullptr. (When using Static variable for assigning and ID to each class in constructor, remember to assign and ID in the copy constructor too (Page 182)
+You should not copy the ID in the assignment operator. Once an ID is assigned to an object it should never change.)
+
+**const Data Members**
+const data members are usually static as well. You should use static const data members in place of global constants when the constants apply only to the class.
+
+**Exception**
+The destructor will not be called when you throw an exception from a constructor.
+
+**Using ternary operator in constructor**  
+``` cpp
+Spreadsheet::Spreadsheet(int inWidth, int inHeight) :
+mWidth(inWidth < kMaxWidth ? inWidth : kMaxWidth),
+mHeight(inHeight < kMaxHeight ? inHeight : kMaxHeight) {
+   mId = sCounter++;
+   mCells = new SpreadsheetCell* [mWidth];
+   for (int i = 0; i < mWidth; i++) {
+      mCells[i] = new SpreadsheetCell[mHeight];
+   }
+}
+```
+
+**reference members**
+You must initialize the reference member in constructors and copy constructor. Remember that after you have initialized a reference you cannot change the object to which it refers. Thus, you do not need to attempt to assign to references in the assignment operator.
+There is an important difference between using a const reference versus a non-const reference. The const reference SpreadsheetApplication data member can only be used to call const methods on the SpreadsheetApplication object. If you try to call a non-const method through a const reference, you will get a compiler error.
+
+**Static Const Functions**
+You also cannot declare a static method const because it is redundant. Static methods do not have an instance of the class so it would be impossible for them to change internal values. const works by making it appear inside the method that you have a const reference to each data member.
+
+**Method Overloading**
+You can overload a method based on const. That is, you can write two methods with the same name and same parameters, one of which is declared const and one of which is not. The compiler will call the const method if you have a const object and the non-const method if you have a non-const object. 
+Overloaded methods can be explicitly deleted, which can be used to disallow calling a member function with particular parameters. For example, suppose you have the following class:
+``` cpp
+class MyClass
+{
+public:
+   void foo(int i);
+};
+
+MyClass c;
+c.foo(123);
+c.foo(1.23);
+```
+For the second line, the compiler will convert the double value (1.23) to an integer value (1) and then call foo(int i). The compiler might give you a warning, but it will perform this implicit conversion. You can prevent the compiler from performing this conversion by explicitly deleting a double instance of foo():
+``` cpp
+class MyClass
+{
+public:
+   void foo(int i);
+   void foo(double d) = delete;
+};
+```
+With this change, an attempt to call foo() with a double will be flagged as an error by the compiler, instead of performing a conversion to an integer.
+
+**Friends**
+Friend classes and methods are easy to abuse; they allow you to violate the principle of abstraction by exposing internals of your class to other classes or functions. Thus, you should use them only in limited circumstances such as operator overloading because in that case you need access to protected and private members, as discussed in the next section.
+
+**Operator overloading**
+``` cpp
+class SpreadsheetCell {
+public:
+   // Omitted for brevity
+   const SpreadsheetCell operator+(const SpreadsheetCell& cell) const;
+   // Omitted for brevity
+};
+```
+Implicit Conversions: once you’ve written the operator+ shown earlier, not only can you add two cells together, you can also add a cell to a string, a double, or an int! You can prevent the implicit construction of a SpreadsheetCell from a string by marking that constructor with the explicit keyword.
+
+``` cpp
+class SpreadsheetCell {
+public:
+   SpreadsheetCell();
+   SpreadsheetCell(double initialValue);
+   explicit SpreadsheetCell(const string& initialValue);
+   SpreadsheetCell(const SpreadsheetCell& src);
+   SpreadsheetCell& operator=(const SpreadsheetCell& rhs);
+   // Remainder omitted for brevity
+};
+```
+
+``` cpp
+aThirdCell = myCell + 4; // Works fine.
+aThirdCell = myCell + 5.6; // Works fine.
+aThirdCell = 4 + myCell; // FAILS TO COMPILE!
+aThirdCell = 5.6 + myCell; // FAILS TO COMPILE!
+```
+
+You can get it to work if you replace the in-class operator+ with a global operator+ function that is not tied to any particular object. The function looks like this:
+``` cpp
+const SpreadsheetCell operator+(const SpreadsheetCell& lhs,
+                                const SpreadsheetCell& rhs) {
+   SpreadsheetCell newCell;
+   newCell.set(lhs.mValue + rhs.mValue); // update mValue and mString.
+   return newCell;
+}
+```
+
+Note that the implementation of the global operator+ accesses protected data members of SpreadsheetCell objects. Therefore, it must be a friend function of the SpreadsheetCell class:
+``` cpp
+class SpreadsheetCell {
+public:
+   // Omitted for brevity
+   friend const SpreadsheetCell operator+(const SpreadsheetCell& lhs,
+      const SpreadsheetCell& rhs);
+   //Omitted for brevity
+};
+```
+In classes with more data members, it might be painful to compare each data member. However, once you’ve implemented == and <, you can write the rest of the comparison operators in terms of those two. For example, here is a defi nition of operator>= that uses operator<
+``` cpp
+bool operator>=(const SpreadsheetCell& lhs, const SpreadsheetCell& rhs) {
+   return !(lhs < rhs);
+}
+```
+**Using Interface and Implementation Classes (expose only public members)**
+The basic principle is to define two classes for every class you want to write: the interface class and the implementation class. The implementation class is identical to the class you would have written if you were not taking this approach. The interface class presents public methods identical to those of the implementation class, but it only has one data member: a pointer to an implementation class object. The interface class method implementations simply call the equivalent methods on the implementation class object.
+``` cpp
+class SpreadsheetApplication; // Forward declaration
+class SpreadsheetImpl {
+public:
+   SpreadsheetImpl(const SpreadsheetApplication& theApp,
+      int inWidth = kMaxWidth, int inHeight = kMaxHeight);
+   SpreadsheetImpl(const SpreadsheetImpl& src);
+   ~SpreadsheetImpl();
+   SpreadsheetImpl &operator=(const SpreadsheetImpl& rhs);
+   void setCellAt(int x, int y, const SpreadsheetCell& inCell);
+   SpreadsheetCell getCellAt(int x, int y);
+   int getId() const;
+   static const int kMaxHeight = 100;
+   static const int kMaxWidth = 100;
+protected:
+   bool inRange(int val, int upper);
+   void copyFrom(const SpreadsheetImpl& src);
+   int mWidth, mHeight;
+   int mId;
+   SpreadsheetCell** mCells;
+   const SpreadsheetApplication& mTheApp;
+   static int sCounter;
+};
+
+class SpreadsheetApplication;
+class Spreadsheet {
+public:
+   Spreadsheet(const SpreadsheetApplication& theApp, int inWidth,
+      int inHeight);
+   Spreadsheet(const SpreadsheetApplication& theApp);
+   Spreadsheet(const Spreadsheet& src);
+   ~Spreadsheet();
+   Spreadsheet& operator=(const Spreadsheet& rhs);
+   void setCellAt(int x, int y, const SpreadsheetCell& inCell);
+   SpreadsheetCell getCellAt(int x, int y);
+   int getId() const;
+protected:
+   SpreadsheetImpl* mImpl;
+};
+
+void Spreadsheet::setCellAt(int x, int y, const SpreadsheetCell& inCell) {
+   mImpl->setCellAt(x, y, inCell);
+}
+
+SpreadsheetCell Spreadsheet::getCellAt(int x, int y) {
+   return mImpl->getCellAt(x, y);
+}
+
+int Spreadsheet::getId() const {
+   return mImpl->getId();
+}
+
+Spreadsheet::Spreadsheet(const SpreadsheetApplication& theApp, int inWidth,
+                         int inHeight) {
+   mImpl = new SpreadsheetImpl(theApp, inWidth, inHeight);
+}
+
+Spreadsheet::Spreadsheet(const SpreadsheetApplication& theApp) {
+   mImpl = new SpreadsheetImpl(theApp);
+}
+
+Spreadsheet::Spreadsheet(const Spreadsheet& src) {
+   mImpl = new SpreadsheetImpl(*(src.mImpl));
+}
+
+Spreadsheet::~Spreadsheet() {
+   delete mImpl;
+   mImpl = nullptr;
+}
+
+```
+The copy constructor looks a bit strange because it needs to copy the underlying SpreadsheetImpl from the source spreadsheet. Because the copy constructor takes a reference to a SpreadsheetImpl, not a pointer, you must dereference the mImpl pointer to get to the object itself so the constructor call can take its reference. The Spreadsheet assignment operator must similarly pass on the assignment to the underlying SpreadsheetImpl:
+``` cpp
+Spreadsheet& Spreadsheet::operator=(const Spreadsheet& rhs)
+{
+   *mImpl = *(rhs.mImpl);
+   return *this;
+}
+```
+
+**Preventing Inheritance** C++11 only
+C++11 allows you to mark a class as final, which means trying to inherit from it will result in a compiler error.
+``` cpp
+class Super final {
+   // Omitted for brevity
+};
+```
+
+**Preventing Overriding** C++11 only
+C++11 allows you to mark a method as final which means that the method cannot be overridden in a subclass. Trying to override a final method will result in a compiler error.
+``` cpp
+class Super {
+public:
+   Super();
+   virtual void someMethod() final;
+};
+```
+**Parent Constructors**
+C++ defines the creation order as follows:
+ 1.	If the class has a base class, the default constructor of the base class is executed, unless there is a call to a base class constructor in the ctor-initializer in which case that constructor is called instead of the default constructor.
+ 2.	Non-static data members of the class are constructed in the order in which they were declared.
+ 3.	The body of the class’s constructor is executed.
+**WARNING** Virtual methods behave differently in constructors. If your derived class has overridden a virtual method from the base class, calling that method from a base class constructor will call the base class implementation of that virtual method and not your overridden version in the derived class.
+These rules can apply recursively. If the class has a grandparent, the grandparent is initialized before the parent, and so on.
+``` cpp
+class Something {
+public:
+   Something() { cout << "2"; }
+};
+
+class Parent {
+public:
+   Parent() { cout << "1"; }
+};
+
+class Child : public Parent {
+public:
+   Child() { cout << "3"; }
+protected:
+   Something mDataMember;
+};
+
+int main() {
+   Child myChild;
+   return 0;
+}
+```
+The proper execution will output the result 123.
+When the myChild object is created, the constructor for Parent is called fi rst, outputting the string "1". Next, mDataMember is initialized, calling the Something constructor, which outputs the string "2". Finally, the Child constructor is called, which outputs "3".
+
+Passing constructor arguments from the subclass to the superclass is perfectly fi ne and quite normal. Passing data members, however, will not work. The code will compile, but remember that data members are not initialized until after the superclass is constructed. If you pass a data member as an argument to the parent constructor, it will be uninitialized.
+
+•	Parent Destructors
+Because destructors cannot take arguments, the language can automatically call the destructor for parent classes. The order of destruction is conveniently the reverse of the order of construction:
+1.	The body of the class’s destructor is called.
+2.	Any data members of the class are destroyed in the reverse order of their construction.
+3.	The parent class, if any, is destructed.
+**WARNING**Just as with constructors, virtual methods behave differently when called from a destructor. If your derived class has overridden a virtual method from the base class, calling that method from the base class destructor will call the base class implementation of that virtual method and not your overridden version in the derived class.  
+These rules apply recursively. The lowest member of the chain is always destructed first.
+``` cpp
+class Something {
+public:
+   Something() { cout << “2”; }
+   virtual ~Something() { cout << “2”; }
+};
+
+class Parent {
+public:
+   Parent() { cout << “1”; }
+   virtual ~Parent() { cout << “1”; }
+};
+
+class Child : public Parent {
+public:
+   Child() { cout << “3”; }
+   virtual ~Child() { cout << “3”; }
+protected:
+   Something mDataMember;
+};
+
+int main() {
+   Child myChild;
+   return 0;
+}
+```
+If executed, this code will output "123321".
+  
+**Non-Virtual Destructors** Always make your destructors virtual! The compiler generated default destructor is not virtual, so you should define your own virtual destructor, at least for your parent classes.
+All destructors should be declared virtual. If the preceding destructors were not declared virtual, the code would continue to work fi ne. However, if code ever called delete on a superclass pointer that was really pointing to a subclass, the destruction chain would begin in the wrong place. For example, the following code is similar to the previous example but the destructors are not virtual. This becomes a problem when a Child object is accessed as a pointer to a Parent and deleted.
+``` cpp
+class Something {
+public:
+   Something() { cout << “2”; }
+   ~Something() { cout << “2”; } // Should be virtual, but will work
+};
+
+class Parent {
+public:
+   Parent() { cout << “1”; }
+   ~Parent() { cout << “1”; } // BUG! Make this virtual!
+};
+
+class Child : public Parent {
+public:
+   Child() { cout << “3”; }
+   ~Child() { cout << “3”; } // Should be virtual, but will work
+protected:
+   Something mDataMember;
+};
+
+int main() {
+   Parent* ptr = new Child();
+   delete ptr;
+   return 0;
+}
+```
+The output of this code is a shockingly terse "1231".
+
