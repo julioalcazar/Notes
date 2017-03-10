@@ -491,3 +491,4 @@ The resultant memory for a Spreadsheet called s1 on the stack with width four an
 ![Memory](https://github.com/amroibrahim/Notes/blob/master/Images/CPP/Memory1.png)  
 
 **Assignment operators must free memory first**
+![Memory](https://github.com/amroibrahim/Notes/blob/master/Images/CPP/Memory2.png)  
