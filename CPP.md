@@ -35,7 +35,7 @@ default:
 }
 ```
   
-**\\n vs endl:** endl forces flush (write data from buffer to stream).
+**\\n vs endl:** endl forces flush (write data from buffer to stream).  
 You can’t pass an array by value, pass by address.
 
 ``` cpp
