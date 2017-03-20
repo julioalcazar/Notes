@@ -1,8 +1,8 @@
-#Comparison Sort  
+# Comparison Sort  
 [Wikipedia Sorting algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm)  
   
   
-##Insertion Sort  
+## Insertion Sort  
 __Time Complexity:__ O(N^2)  
 __Auxiliary Space:__ O(1)  
 __Stable:__ Yes  
@@ -12,7 +12,7 @@ Advantage
 *  Low overhead (When problem size is small)  
   
   
-##Selection Sort
+## Selection Sort
 __Time Complexity:__ O(N^2)  
 __Auxiliary Space:__ O(1)  
 __Stable:__ No  
@@ -22,7 +22,7 @@ Advantage
 *  No need for extra memory.  
   
   
-##Shell Sort  
+## Shell Sort  
 __Time Complexity:__ O(N^3/2)  
 __Auxiliary Space:__ O(1)  
 __Stable:__ No  
@@ -31,14 +31,14 @@ Advantage
 *  Adaptive (It takes advantage of existing order in its input) O(N lg(N)) time when nearly sorted  
   
   
-##Shuffle  
+## Shuffle  
 __Time Complexity:__ O(N)  
 __Auxiliary Space:__ O(1)  
 __Stable:__ No  
 Rearrange array so that result is a uniformly random permutation.  
   
   
-##Merge Sort  
+## Merge Sort  
 __Time Complexity:__ O(N Log N)  
 __Auxiliary Space:__ O(N)  
 __Stable:__ Yes  
@@ -48,7 +48,7 @@ Advantage
 *  Highly parallelizable  
   
   
-##Bottom Up Merge sort  
+## Bottom Up Merge sort  
 __Time Complexity:__ O(N Log N)  
 __Auxiliary Space:__ O(N)  
 __Stable:__ Yes  
@@ -58,12 +58,12 @@ Advantage
 *  Non-recursive implementation 
   
   
-##External merge sort  
+## External merge sort  
 which sorts chunks that each fit in RAM, then merges the sorted chunks together.For example, for sorting 900 megabytes of data using only 100 megabytes of RAM.  
 [Wikipedia External sorting](https://en.wikipedia.org/wiki/External_sorting)  
   
   
-##Quick Sort
+## Quick Sort
 __Time Complexity:__ Average O(N Log N), Worst O(N^2)  
 __Auxiliary Space:__ O(1)  
 __Stable:__ No  
@@ -79,7 +79,7 @@ The steps are:
 3.  Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.  
   
   
-##Heap sort  
+## Heap sort  
 __Time Complexity:__ Average O(N Log N), Worst O(N Log N)  
 __Auxiliary Space:__ O(1)  
 __Stable:__ No  
@@ -95,19 +95,19 @@ Heaps are usually implemented using arrays. This representation is that the posi
 *  Not stable.  
   
   
-##Bitmap Sort
+## Bitmap Sort
 __Time Complexity:__ O(N) 
 __Auxiliary Space:__ O(N)  
 __Stable:__ N/A (elements are unique)
 This algorithm works on unique integers in a given range, with no data associated with it.
 
   
-##Count Sort
+## Count Sort
 __Time Complexity:__ O(N) 
 __Auxiliary Space:__ O(N) 
 __Stable:__ Yes (depends on implementation)
 
-##Radix Sort
+## Radix Sort
 __Time Complexity:__ O(WN) 
 __Auxiliary Space:__ O(W+N) 
 __Stable:__ Yes 
