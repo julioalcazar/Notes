@@ -113,3 +113,7 @@ __Auxiliary Space:__ O(W+N)
 __Stable:__ Yes 
 Radix sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by the individual digits which share the same significant position and value.
 
+## Suffix Sort (Suffix Array)  
+__Time Complexity:__ O(N) 
+__Auxiliary Space:__ O(N) 
+A suffix array is a sorted array of all suffixes of a given string
