@@ -14,6 +14,7 @@ __Code__
 [C++](https://github.com/amroibrahim/Notes/blob/master/CPP.md)  
 [Discrete Optimization](https://github.com/amroibrahim/Notes/blob/master/DiscreteOptimization.md)  
 [Machine Learning](https://github.com/amroibrahim/Notes/blob/master/MachineLearning.md)  
+[Operating Systems](https://github.com/amroibrahim/Notes/blob/master/OperatingSystems.md)  
 [Parallel Programming](https://github.com/amroibrahim/Notes/blob/master/ParallelProgramming.md)  
 [Sorting](https://github.com/amroibrahim/Notes/blob/master/Sorting.md)  
 [Testing](https://github.com/amroibrahim/Notes/blob/master/Testing.md)  
