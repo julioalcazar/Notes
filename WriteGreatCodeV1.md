@@ -1,4 +1,4 @@
-#Write Great Code Volume I : Understanding the Machine  
+# Write Great Code Volume I : Understanding the Machine  
   
 ___Characteristics of Great Code___  
 * Uses the CPU efficiently (which means the code is fast)
