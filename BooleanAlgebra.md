@@ -1,4 +1,4 @@
-#Boolean Algebra  
+# Boolean Algebra  
 
 ___Operations with 0 and 1___  
 X OR 0 = X  
