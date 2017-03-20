@@ -32,12 +32,12 @@
 | Quick-Union  | N | N | N ||
 | Weighted Quick-Union  | N | lg N | lg N ||
 
-##Contiguous vs. Linked Data Structures  
+## Contiguous vs. Linked Data Structures  
 Data structures can be neatly classified as either contiguous or linked, depending upon whether they are based on arrays or pointers:  
 * __Contiguously-allocated structures__ are composed of single slabs of memory, and include arrays, matrices, heaps, and hash tables.  
 * __Linked data structures__ are composed of distinct chunks of memory bound together by pointers, and include lists, trees, and graph adjacency lists.  
  
-##Contiguous (Arrays)  
+## Contiguous (Arrays)  
 The array is the fundamental contiguously-allocated data structure. Arrays are structures of fixed-size data records such that each element can be efficiently located by its index or (equivalently) address.  
 __Advantages of contiguously-allocated arrays include:__
 * Constant-time access given the index – Because the index of each element maps directly to a particular memory address, we can access arbitrary data items instantly provided we know the index.  
@@ -47,7 +47,7 @@ __Advantages of contiguously-allocated arrays include:__
 __Disadvantage of contiguously-allocated arrays include:__  
 * Cannot adjust their size in the middle of a program’s execution. Our program will fail soon as we try to add the (n + 1)st customer, if we only allocate room for n records. We can compensate by allocating extremely large arrays, but this can waste space, again restricting what our programs can do.  
 
-##Linked Data Structures (Linked List)  
+## Linked Data Structures (Linked List)  
 * Overflow on linked structures can never occur unless the memory is actually full.  
 * Insertions and deletions are simpler than for contiguous (array) lists.  
 * With large records, moving pointers is easier and faster than moving the items themselves.  
@@ -63,32 +63,32 @@ Recursive View
 
 ---
 
-##Stacks
+## Stacks
 Support retrieval by last-in, first-out (LIFO) order. Stacks are simple to implement and very efficient. For this reason, stacks are probably the right container to use when retrieval order doesn’t matter at all, such as when processing batch jobs. The put and get operations for stacks are usually called push and pop:
 * __Push(x,s):__ Insert item x at the top of stack s.  
 * __Pop(s):__ Return (and remove) the top item of stack s.  
 
-##Dynamic Arrays (Resizing Array)
+## Dynamic Arrays (Resizing Array)
 Support the ability to resize an array dynamically (when needed).  
 * __Grow Array:__ If array is full, create a new array of twice the size, and copy items (repeated doubling). Cost of inserting first N items. N + (2 + 4 + 8 + … + N) ~ 3N.  
 * __Shrink Array:__  Halve size of array when array is one-quarter full (1/4). If we halve size of array when array is one-half full thrashing could happen by adding and removing if the array is full.  
 
-##Queues
+## Queues
 Support retrieval in first in, first out (FIFO) order. This is surely the fairest way to control waiting times for services. You want the container holding jobs to be processed in FIFO order to minimize the maximum time spent waiting. Note that the average waiting time will be the same regardless of whether FIFO or LIFO is used. Many computing applications involve data items with infinite patience, which renders the question of maximum waiting time moot.  
 * __Enqueue(x,q):__ Insert item x at the back of queue q.  
 * __Dequeue(q):__ Return (and remove) the front item from queue q.  
 
-##Dictionaries
+## Dictionaries
 The dictionary data type permits access to data items by content. You stick an item into a dictionary so you can find it when you need it.  
 
-##Trees  
+## Trees  
   
-##Properties of binary trees
+## Properties of binary trees
 * The number of nodes n in a full binary tree, is at least n = 2^h and at most n = 2^(h+1) - 1, where h is the height of the tree. A tree consisting of only a root node has a height of 0.  
 * The number of leaf nodes l in a perfect binary tree, is l = (n + 1) / 2. (to find the value of n look above point)  
 * In a perfect full binary tree, l = 2^(h) thus n = 2^(h+1) - 1.  
 
-##Heaps (Priority Queues) 
+## Heaps (Priority Queues) 
 * __Heapify :__ which runs in O(lg n) time.
 * __Build-Heap :__ which runs in linear time.
 * __Heap Sort :__ which runs in O(n lg n) time.
@@ -121,11 +121,11 @@ Used to add a node to the heap. To add a node, it is inserted at the last empty 
 __Heapify-down__ (sink)  
 Used during removal of a node. When a node is removed which is always the root (lowest in priority) the last available node in heap is replaced as the root and heapify-down process is done. The key of parent node is compared with the children. If any of the children have lower priority it is swapped with the parent. The process is repeated for the newly swapped node till the heap property is met.  
 
-##Binary Search Trees 
+## Binary Search Trees 
 [Wikipedia Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)  
 The binary search tree labeling uniquely identities where each key is located. Start at the root. Unless it contains the query key x, proceed either left or right depending upon whether x occurs before or after the root key.  
 __Traversal in a Tree__  
-###Depth First
+### Depth First
 There are three types of __depth-first__ traversal: __pre-order__, __in-order__, and __post-order__  
 * __Pre-order__  
 Display the data part of root element (or current element).  
@@ -160,7 +160,7 @@ Postorder traversal is used to delete the tree. Please see the question for dele
 ![Postorder](https://github.com/amroibrahim/Notes/blob/master/Images/Algorithms/Sorted_binary_tree_postorder.png)  
 Post-order: A, C, E, D, B, H, I, G, F  
 
-###Breadth-first search (Level-order)  
+### Breadth-first search (Level-order)  
 The algorithm uses a queue data structure to store intermediate results as it traverses the graph, as follows:  
 1.  Enqueue the root node  
 2.  Dequeue a node and examine it, If the element sought is found in this node, quit the search and return a result. Otherwise enqueue any successors (the direct child nodes) that have not yet been discovered.  
@@ -168,8 +168,8 @@ The algorithm uses a queue data structure to store intermediate results as it tr
 4.  If the queue is not empty, repeat from Step 2  
 ![Breadth](https://github.com/amroibrahim/Notes/blob/master/Images/Algorithms/Sorted_binary_tree_breadth-first_traversal.png)  
 
-##Balanced Search Trees  
-###2-3 Search Trees  
+## Balanced Search Trees  
+### 2-3 Search Trees  
 [Wikipedia 2–3 tree](https://en.wikipedia.org/wiki/2%E2%80%933_tree)  
 A 2–3 tree is a tree data structure, where every node with children (internal node) has either two children (2-node) and one data element or three children (3-nodes) and two data elements.  
 * Symmetric order: Inorder traversal yields keys in ascending order.  
@@ -189,7 +189,7 @@ __Insertion into a 3-node at bottom__
 __AVL VS Red-Black__  
 The AVL trees are more balanced compared to Red Black Trees, but they may cause more rotations during insertion and deletion. So if your application involves many frequent insertions and deletions, then Red Black trees should be preferred. And if the insertions and deletions are less frequent and search is more frequent operation, then AVL tree should be preferred over Red Black Tree.
 
-###Left-Leaning Red-Black Balanced Search Trees  
+### Left-Leaning Red-Black Balanced Search Trees  
 [Wikipedia Red-Black tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)  
 __Red-Black Tree__ Represents 2-3 trees as BST. It uses "internal" links as an indication of 3 nodes ( red link means they are in same node)
   
@@ -239,7 +239,7 @@ now check parent node
  3.  is left child red and right child red -> flip colors  
  4.  Now check if parent(s) has all those cases true  
 
-###B-Trees  
+### B-Trees  
 B-Tree is a self-balancing search tree. It is an extention of binary search tree, but insted of having 2 childrin each node has at most M children.  
 
 __Properties of B-Trees__  
@@ -251,25 +251,25 @@ B-tree is a self-balancing tree data structure that keeps data sorted and allows
  4.  A non-leaf node with k children contains k−1 keys.
  5.  All leaves appear in the same level
 
-###AVL Trees  
+### AVL Trees  
 [Wikipedia AVL tree](https://en.wikipedia.org/wiki/AVL_tree)  
 AVL tree is a self-balancing binary search tree. It was the first such data structure to be invented.[2] In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property. Lookup, insertion, and deletion all take O(log n) time in both the average and worst cases, where n is the number of nodes in the tree prior to the operation. Insertions and deletions may require the tree to be rebalanced by one or more tree rotations.  
   
-###k-d Trees  
+### k-d Trees  
 [Wikipedia k-d tree](https://en.wikipedia.org/wiki/K-d_tree)  
 k-d trees is a space-partitioning data structure for organizing points in a k-dimensional space. k-d trees are a useful data structure for several applications, such as searches involving a multidimensional search key (e.g. range searches and nearest neighbor searches). k-d trees are a special case of binary space partitioning trees.  
   
-###Interval Search Trees  
+### Interval Search Trees  
 [Wikipedia Interval tree](https://en.wikipedia.org/wiki/Interval_tree)  
 Interval tree is a tree data structure to hold intervals. Specifically, it allows one to efficiently find all intervals that overlap with any given interval or point. It is often used for windowing queries, for instance, to find all roads on a computerized map inside a rectangular viewport, or to find all visible elements inside a three-dimensional scene. A similar data structure is the segment tree.  
   
-##Graphs  
+## Graphs  
 [Wikipedia Graph](https://en.wikipedia.org/wiki/Graph_(abstract_data_type))
   
-###Graph Anatomy  
+### Graph Anatomy  
 ![Graph Anatomy](https://github.com/amroibrahim/Notes/blob/master/Images/Algorithms/Graph_anatomy.png)  
   
-###Representations  
+### Representations  
 __Adjacency matrix__  
 A two-dimensional matrix, in which the rows represent source vertices and columns represent destination vertices. Data on edges and vertices must be stored externally. Only the cost for one edge can be stored between each pair of vertices.  
   
@@ -314,7 +314,7 @@ Certain graphs are not explicitly constructed and then traversed, but built as w
 __Labeled vs. Unlabeled__  
 Each vertex is assigned a unique name or identifier in a labeled graph to distinguish it from all other vertices. In unlabeled graphs, no such distinctions have been made.  
   
-###Traversing a Graph  
+### Traversing a Graph  
 Each vertex will exist in one of three states:
 * __undiscovered__ the vertex is in its initial, virgin state.
 * __discovered__ the vertex has been found, but we have not yet checked out all its incident edges.
