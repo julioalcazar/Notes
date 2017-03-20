@@ -98,14 +98,14 @@ Heaps are usually implemented using arrays. This representation is that the posi
 ## Bitmap Sort
 __Time Complexity:__ O(N) 
 __Auxiliary Space:__ O(N)  
-__Stable:__ N/A (elements are unique)
+__Stable:__ N/A (elements are unique)  
 This algorithm works on unique integers in a given range, with no data associated with it.
 
   
 ## Count Sort
 __Time Complexity:__ O(N) 
 __Auxiliary Space:__ O(N) 
-__Stable:__ Yes (depends on implementation)
+__Stable:__ Yes (depends on implementation)  
 
 ## Radix Sort
 __Time Complexity:__ O(WN) 
@@ -116,4 +116,5 @@ Radix sort is a non-comparative integer sorting algorithm that sorts data with i
 ## Suffix Sort (Suffix Array)  
 __Time Complexity:__ O(N) 
 __Auxiliary Space:__ O(N) 
+__Stable:__ N/A  
 A suffix array is a sorted array of all suffixes of a given string
