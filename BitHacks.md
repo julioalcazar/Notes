@@ -1,4 +1,4 @@
-###__No-Temp Swap__  
+### __No-Temp Swap__  
 X = X ^ Y  
 Y = X ^ Y  
 X = X ^ Y  
@@ -9,7 +9,7 @@ Performance
   
 ---
   
-###__No-Branch Minimum__  
+### __No-Branch Minimum__  
 Answer = Y ^ ((X ^ Y) & -(X < Y));  
   
 If X < Y, then -(X < Y) = -1, which is all 1’s in two’s complement representation. Therefore, we have Y ^ (X ^ Y) = X.  
@@ -20,7 +20,7 @@ Performance
   
 ---
   
-###__Round up to a Power of 2__  
+### __Round up to a Power of 2__  
    --iNumber;  
    iNumber |= iNumber >> 1;  
    iNumber |= iNumber >> 2;  
@@ -33,7 +33,7 @@ The decrement and increment is to handle the boundary case when iNumber is a pow
   
 ---
   
-###__Find the least-significant bit__  
+### __Find the least-significant bit__  
 Answer = X & (-X);  
 Example  
 
@@ -45,7 +45,7 @@ Example
   
 ---
   
-###__Count the number of set (1s) bits in a Byte(s)__  
+### __Count the number of set (1s) bits in a Byte(s)__  
 ```
 int iCount = 0;  
 while(iNumber != 0)  
