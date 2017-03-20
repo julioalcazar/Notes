@@ -1,4 +1,4 @@
-#My C++ Notes
+# My C++ Notes
 **Loops**  
  1. The while loop.
  2. The do-while loop.
