@@ -1,3 +1,4 @@
+https://www.reddit.com/r/gamedev/comments/46uvhq/any_good_ways_of_learning_about_making/
 http://freecomputerbooks.com/Modern-Multithreading.html
 http://www.nvidia.com/content/cudazone/download/opencl/nvidia_opencl_programmingguide.pdf
 http://www.cdschools.org/cms/lib04/PA09000075/Centricity/Domain/81/BlenderBasics_4thEdition2011.pdf
