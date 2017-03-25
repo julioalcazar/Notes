@@ -867,7 +867,7 @@ This allows you to write the following:
 return __super::getTemperature() + "\u00B0F";
 ```
 
-**Casting Up and Down**
+**Casting Up and Down**  
 This is generally the correct way to refer to a subclass in terms of its superclass, also called upcasting.
 ```
 When upcasting, use a pointer or reference to the superclass to avoid slicing.
@@ -895,4 +895,311 @@ void lessPresumptuous(Super* inSuper)
       // Proceed to access Sub methods on mySub.
    }
 }
+```
+```
+Use downcasting only when necessary and be sure to use a dynamic_cast.
+```
+**Pure Virtual Methods and Abstract Base Classes**  
+If a class contains one or more pure virtual methods, it can never be used to construct an object of that type.
+```
+You can have a pure virtual function with an implementation. This is used when there's a more-or-less reasonable default behavior, but the class designed wants that sort-of-default behavior to be invoked only explicitly. It can also be the case what you want derived classes to always perform their own work but also be able to call a common set of functionality.
+```
+``` cpp
+class SpreadsheetCell
+{
+public:
+   SpreadsheetCell();
+   virtual ~SpreadsheetCell();
+   virtual void set(const std::string& inString) = 0;
+   virtual std::string getString() const = 0;
+};
+```
+**Multiple inheritance name ambiguity**
+The solution to the ambiguity is to either explicitly upcast the object, essentially hiding the undesired version of the method from the compiler, or to use a disambiguation syntax.
+``` cpp
+static_cast<Dog>(myConfusedAnimal).eat(); // Slices, calling Dog::eat()
+myConfusedAnimal.Dog::eat(); // Calls Dog::eat()
+void DogBird::eat()
+{
+   Dog::eat(); // Explicitly call Dog’s version of eat()
+}
+```
+
+**Changing the method parameters**  
+If you use the name of a virtual method from the parent class in the definition of a subclass, but it uses different parameters than the method of that name uses in the parent class, it is not overriding the method of the parent class — it is creating a new method. Returning to the Super and Sub example from earlier in this chapter, you could attempt to override someMethod() in Sub with a new argument list as follows:
+``` cpp
+class Super
+{
+public:
+   Super();
+   virtual void someMethod();
+};
+class Sub : public Super
+{
+public:
+   Sub();
+   virtual void someMethod(int i); // Compiles, but doesn’t override
+   virtual void someOtherMethod();
+};
+```
+The preceding class definition will compile, but you have not overridden someMethod(). Because the arguments are different, you have created a new method that exists only in Sub. If you want a method called someMethod() that takes an int, and you want it to work only on objects of class Sub, the preceding code is correct. In fact, the C++ standard says that the original method is now hidden as far as Sub is concerned. The following sample code will not compile because there is no longer a no-argument version of someMethod().
+``` cpp
+Sub mySub;
+mySub.someMethod(); // BUG! Won’t compile because original method is hidden.
+```
+There is a somewhat obscure technique you can use to have your cake and eat it too. That is, you can use this technique to effectively “override” a method in the subclass with a new prototype but continue to inherit the superclass version. This technique uses the using keyword to explicitly include the superclass definition of the method within the subclass as follows:
+``` cpp
+class Super
+{
+public:
+   Super();
+   virtual void someMethod();
+};
+class Sub : public Super
+{
+public:
+   Sub();
+   using Super::someMethod; // Explicitly “inherits” the Super version
+   virtual void someMethod(int i); // Adds a new version of someMethod
+   virtual void someOtherMethod();
+};
+```
+**The override keyword**
+```
+C++11 Page 247
+```
+``` cpp
+class Super
+{
+public:
+   Super();
+   virtual void someMethod(double d);
+};
+
+class Sub : public Super
+{
+public:
+   Sub();
+   virtual void someMethod(int i);
+};
+```
+This definition of Sub will generate a compiler error, because with the override keyword you are saying that someMethod() is supposed to be overriding a method from the Super class, but in the Super class there is no someMethod() accepting an integer, only one accepting a double.
+``` cpp
+class Sub : public Super
+{
+public:
+   Sub();
+   virtual void someMethod(int i) override;
+};
+```
+
+**Inherited Constructors**  
+```
+C++11 2nd E Page 247, 3ed E Page 253
+```
+``` cpp
+class Super
+{
+public:
+   Super(const std::string& str);
+};
+class Sub : public Super
+{
+public:
+   Sub(int i);
+};
+
+Super super(“Hello”); // OK, calls string based Super ctor
+Sub sub1(1); // OK, calls integer based Sub ctor
+Sub sub2(“Hello”); // Error, Sub does not inherit string Super ctor
+```
+If you would like the ability to construct Sub objects using the string based Super constructor, you can explicitly inherit the Super constructors in the Sub class as follows:
+``` cpp
+class Sub : public Super
+{
+public:
+   using Super::Super;
+   Sub(int i);
+};
+
+class Super
+{
+public:
+   Super(const std::string& str);
+   Super(float f);
+};
+class Sub : public Super
+{
+public:
+   using Super::Super;
+   Sub(float f); // Overrides inherited float based Super ctor
+};
+```
+When you inherit a constructor from a base class, you inherit all of them. It is not possible to inherit only a subset of the constructors of a base class.
+
+**In class member initializers**
+```
+C++11 Page 251
+```
+``` cpp
+class Sub : public Super
+{
+public:
+   using Super::Super;
+   Sub(int i) : Super(“”), mInt(i) {}
+protected:
+   int mInt = 0;
+};
+```
+
+**Superclass method is static**
+```
+2ed Page 252, 3ed Page 257
+static methods are scoped by the name of the class in which they are defined, but are not methods that apply to a specific object. A method in a class that calls a static method calls the version determined by normal name resolution. When called syntactically by using an object, the object is not actually involved in the call, except to determine the type.
+```
+You cannot override a static method. A method cannot be both static and virtual. If you have a static method in your subclass with the same name as a static method in your superclass, you actually have two separate methods.
+``` cpp
+SubStatic mySubStatic;
+SuperStatic& ref = mySubStatic;
+mySubStatic.beStatic();
+ref.beStatic();
+```
+The first call to beStatic() will obviously call the SubStatic version because it is explicitly called on an object declared as a SubStatic. The second call might not work as you expect. The object is a SuperStatic reference, but it refers to a SubStatic object. In this case, SuperStatic’s version of beStatic() will be called. The reason is that C++ doesn’t care what the object actually is when calling a static method. It cares about only the compile-time type. In this case, the type is a reference to a SuperStatic.
+The output of the previous example is as follows:
+```
+SubStatic keepin’ it static.
+SuperStatic being static.
+```
+
+**Superclass method is overloaded**
+```cpp
+class Super
+{
+public:
+   virtual void overload() { cout << “Super’s overload()” << endl; }
+   virtual void overload(int i) {
+      cout << “Super’s overload(int i)” << endl; }
+};
+class Sub : public Super
+{
+public:
+   virtual void overload() { cout << “Sub’s overload()” << endl; }
+};
+```
+If you attempt to call the version of overload() that takes an int parameter on a Sub object, your code will not compile because it was not explicitly overridden.
+``` cpp
+mySub.overload(2); // BUG! No matching method for overload(int).
+```
+It is possible, however, to access this version of the method from a Sub object. All you need is a pointer or a reference to a Super object.
+``` cpp
+Sub mySub;
+Super* ptr = &mySub;
+ptr->overload(7);
+```
+The using keyword can be employed to save you the trouble of overloading all the versions when you really only want to change one. In the following code, the Sub class definition uses one version of overload() from Super and explicitly overloads the other:
+``` cpp
+class Super
+{
+public:
+   virtual void overload() { cout << “Super’s overload()” << endl; }
+   virtual void overload(int i) {
+      cout << “Super’s overload(int i)” << endl; }
+};
+class Sub : public Super
+{
+public:
+   using Super::overload;
+   virtual void overload() { cout << “Sub’s overload()” << endl; }
+};
+```
+
+**Superclass method has default arguments**  
+Subclasses and superclasses can each have different default arguments, but the argument that is used depends on the declared type of the variable, not the underlying object.
+``` cpp
+class Super
+{
+public:
+   virtual void go(int i = 2) {
+      cout << “Super’s go with i=” << i << endl; }
+};
+class Sub : public Super
+{
+public:
+   virtual void go(int i = 7) {
+      cout << “Sub’s go with i=” << i << endl; }
+};
+```
+If go() is called on a Sub object, Sub’s version of go() will be executed with the default argument of 7. If go() is called on a Super object, Super’s version of go() will be executed with the default argument of 2. However (this is the weird part), if go() is called on a Super pointer or Super reference that really points to a Sub object, Sub’s version of go() will be called but it will use the default Super argument of 2. This behavior is shown in the following example:
+``` cpp
+Super mySuper;
+Sub mySub;
+Super& mySuperReferenceToSub = mySub;
+mySuper.go();
+mySub.go();
+mySuperReferenceToSub.go();
+```
+The output of this code is as follows:
+``` cpp
+Super’s go with i=2
+Sub’s go with i=7
+Sub’s go with i=2
+```
+The reason for this behavior is that C++ binds default arguments to the type of the expression describing the object being involved, not by the actual object type. For this same reason, default arguments are not “inherited” in C++. If the Sub class above failed to provide a default argument as its parent did, it would be overloading the go() method with a new non zero-argument version.
+
+**Superclass method has a different access level**
+To enforce tighter restriction on a method (or on a data member for that matter), there are two approaches you can take. One way is to change the access specifier for the entire base class. This approach is described later in this chapter. The other approach is simply to redefine the access in the subclass, as illustrated in the Shy class that follows:
+``` cpp
+class Gregarious
+{
+public:
+   virtual void talk() { cout << “Gregarious says hi!” << endl; }
+};
+class Shy : public Gregarious
+{
+protected:
+   virtual void talk() { cout << “Shy reluctantly says hello.” << endl; }
+};
+```
+The protected version of talk() in the Shy class properly overrides the method. Any client code that attempts to call talk() on a Shy object will get a compile error:
+``` cpp
+myShy.talk(); // BUG! Attempt to access protected method.
+```
+However, the method is not fully protected. One only has to obtain a Gregarious reference or pointer to access the method that you thought was protected:
+``` cpp
+Shy myShy;
+Gregarious& ref = myShy;
+ref.talk();
+```
+The output of the preceding code is:
+```
+Shy reluctantly says hello.
+```
+This proves that making the method protected in the subclass did actually override the method (because the subclass version was correctly called), but it also proves that the protected access can’t be fully enforced if the superclass makes it public.  
+Lessen access restrictions in subclasses. The simplest way is simply to provide a public method that calls a protected method from the superclass
+
+``` cpp
+class Secret
+{
+protected:
+   virtual void dontTell() { cout << “I’ll never tell.” << endl; }
+};
+class Blabber : public Secret
+{
+public:
+   virtual void tell() { dontTell(); }
+};
+```
+A client calling the public tell() method of a Blabber object would effectively access the protected method of the Secret class. Of course, this doesn’t really change the access level of dontTell(), it just provides a public way of accessing it.  
+You could also override dontTell() explicitly in the Blabber subclass and give it new behavior with public access. This makes a lot more sense than reducing the level of access because it is entirely clear what happens with a reference or pointer to the base class. For example, suppose that Blabber actually made the dontTell() method public:  
+``` cpp
+class Secret
+{
+protected:
+   virtual void dontTell() { cout << “I’ll never tell.” << endl; }
+};
+class Blabber : public Secret
+{
+public:
+   virtual void dontTell() { cout << “I’ll tell all!” << endl; }
+};
 ```
