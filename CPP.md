@@ -13,7 +13,7 @@ for (int i : arr) {
 }
 ``` 
   
-**Strings**
+**Strings**  
  1. C Style string (char array)
  2. C++ strings
  3. Nonstandard strings (CString MFC)
@@ -79,7 +79,7 @@ auto string1 = "Hello World"; // string1 will be a const char*
 auto string2 = "Hello World"s; // string2 will be an std::string
 ``` 
   
-**Std::String**
+**Std::String**  
 The following functions are available to convert numerical values into strings:
 ``` cpp
 string to_string(int val);
@@ -106,7 +106,7 @@ double stod(const string& str, size_t *idx=0);
 long double stold(const string& str, size_t *idx=0);
 ``` 
 
-**Raw String Literals**
+**Raw String Literals**   
 Raw string literals are string literals that can span across multiple lines of code, that don’t require escaping of embedded double quotes
 
 ``` cpp
@@ -130,7 +130,7 @@ string str = R"(Line 1
 Line 2 with \t)";
 ``` 
 
-**Comments**
+**Comments**  
 ``` cpp
 /*
 * Author: marcg
@@ -144,7 +144,7 @@ Line 2 with \t)";
 */
 ```
 
-**Enumerated Types**
+**Enumerated Types**  
 ``` cpp
 enum PieceType  { 
    PieceTypeKing,
@@ -156,7 +156,7 @@ enum PieceType  {
 ``` 
 Behind the scenes, an enumerated type is just an integer value. The real value of PieceTypeKing is zero.
 
-**Strongly Typed Enumerations**
+**Strongly Typed Enumerations**  
     Enumerations as explained above are not strongly typed, meaning they are not type-safe. They are always interpreted as integers, and thus you can compare enumeration values from completely different enumeration types. The enum class solves these problems.
 
 ``` cpp
@@ -172,7 +172,7 @@ The enumeration values are not automatically converted to integers, which means 
 if (MyEnum::EnumValue3 == 11) {...}
 ```
 
-**Alternative Function Syntax**
+**Alternative Function Syntax**  
 The following example demonstrates the alternative function syntax. The auto keyword in this context has the meaning of starting a function prototype using the alternative function syntax
 ``` cpp
 auto func(int i) -> int {
@@ -180,7 +180,7 @@ auto func(int i) -> int {
 }
 ```
 
-**auto Keyword**
+**auto Keyword**  
 The auto keyword has four completely different meanings.
 1. The first meaning is to tell the compiler to automatically deduce the type of a variable at compile time.
 ``` cpp
@@ -205,7 +205,7 @@ auto divideNumbers(double numerator, double denominator) {
 4. Fourth use of auto is for generic lambda expressions
 
 
-**const Keyword**
+**const Keyword**  
 If the word const appears to the left of the asterisk, what’s pointed to is constant; if the word const appears to the right of the asterisk, the pointer itself is constant; if const appears on both sides, both are constant
 ``` cpp
 char greeting[]="Hello";
@@ -218,7 +218,7 @@ void f1(const Widget *pw); //f1 takes a pointer to a constant Widget object
 void f2(Widget const *pw); //f2 so does f2
 ```
 
-**decltype Keyword**
+**decltype Keyword**  
  The decltype keyword takes an expression as argument, and computes the type of that expression
 ``` cpp
 int x = 123;
@@ -254,20 +254,20 @@ The solution in C++14
 decltype(auto) f3 = foo();
 ```
 
-**Advantages/Disadvantages C-Style Strings**
-**Advantages:**
+**Advantages/Disadvantages C-Style Strings**  
+**Advantages:**  
 - They are simple, making use of the underlying basic character type and array structure.
 - They are lightweight, taking up only the memory that they need if used properly.
 - They are low level, so you can easily manipulate and copy them as raw memory.
 - They are well understood by C programmers — why learn something new?
 
-**Disadvantages:**
+**Disadvantages:**  
 - They require incredible efforts to simulate a first-class string data type.
 - They are unforgiving and susceptible to difficult-to-find memory bugs.
 - They don’t leverage the object-oriented nature of C++.
 - They require knowledge of their underlying representation on the part of the programmer.
 
-**Big-O**
+**Big-O**  
 
 | ALGORITHM COMPLEXITY  | BIG-O NOTATION  | EXPLANATION | EXAMPLE ALGORITHMS |
 | --------------------- |:---------------:|:----------- |:------------------ |   
@@ -279,7 +279,7 @@ decltype(auto) f3 = foo();
 | Exponential           | O(2n)           | The running time is an exponential function of the input size. | Optimized traveling salesman problem |  
 
 
-**Access Specifiers**
+**Access Specifiers**  
 
 | ACCESS SPECIFICATION | MEANING |  WHEN TO USE| 
 | -------------------- |:------- |:----------- |
@@ -288,13 +288,13 @@ decltype(auto) f3 = foo();
 | private | Only member functions of the class can call private member functions and access private data members. Member functions in derived classes cannot access private members from a base class. |  Everything should be private by default, especially data members. You can provide protected getters and setters if you only want to allow derived classes to access them, and provide public getters and setters if you want clients to access them.|  
 
 
-**The Compiler will generate the following by default**
+**The Compiler will generate the following by default**  
  1. Default constructor
  2. Copy constructor
  3.	Copy assignment operator
  4.	Default destructor
 
-**When You Need a Default Constructor**
+**When You Need a Default Constructor**  
 Consider arrays of objects. The act of creating an array of objects accomplishes two tasks: It allocates contiguous memory space for all the objects and it calls the default constructor on each object. C++ fails to provide any syntax to tell the array creation code directly to call a different constructor. For example, if you do not define a default constructor for the SpreadsheetCell class, the following code does not compile:
 ``` cpp
 SpreadsheetCell cells[3]; // FAILS compilation without default constructor
@@ -307,7 +307,7 @@ SpreadsheetCell(41)};
 ```
 However, it is usually easier to ensure that your class has a default constructor if you intend to create arrays of objects of that class. If you haven’t defined your own constructors, the compiler will automatically create a default constructor for you. This compiler-generated constructor is discussed in a next section. A default constructor is also required for classes that you want to store in an STL container like std::vector.  Default constructors are also useful when you want to create objects of that class inside other classes, which is shown later in this chapter under the section Constructor Initializers.  
 
-**Using default constructors**
+**Using default constructors**  
 Unfortunately, the line attempting to call the default constructor will compile. The line following it will not compile. The problem is that your compiler thinks the first line is actually a function declaration for a function with the name myCell that takes zero arguments and returns a SpreadsheetCell object. When it gets to the second line, it thinks that you’re trying to use a function name as an object!
 ``` cpp
 SpreadsheetCell myCell(); // WRONG, but will compile.
@@ -315,7 +315,7 @@ myCell.setValue(6); // However, this line will not compile.
 cout << "cell 1: " << myCell.getValue() << endl;
 ```
 
-**Explicitly Defaulted Constructors**
+**Explicitly Defaulted Constructors**  
 This allows you to write the class definition as follows without the need to implement it in the implementation file.  
 ``` cpp
 class MyClass {
@@ -325,7 +325,7 @@ public:
 };
 ```
 
-**Explicitly Deleted Constructors**
+**Explicitly Deleted Constructors**  
 C++11 also supports the concept of explicitly deleted constructors. For example, you can define a class for which you do not want to write any constructors and you also do not want the compiler to generate the default constructor.
 ``` cpp
 class MyClass {
@@ -333,7 +333,7 @@ public:
    MyClass() = delete;
 };
 ```
-**Initialization list (ctor-initializer)**
+**Initialization list (ctor-initializer)**  
 Must be used with the following
 
 | DATA TYPE | EXPLANATION | 
@@ -344,13 +344,13 @@ Must be used with the following
 | Object data members for which there is no default constructor | C++ attempts to initialize member objects using a default constructor. If no default constructor exists, it cannot initialize the object. |
 | Superclasses without default constructors | No default constuctors to call and create the object |
 
-**Default copy constructor**
+**Default copy constructor**  
 Given a set of member variables, called m1, m2, ... mn, the compiler-generated copy constructor can be expressed as:
 ``` cpp
 classname::classname(const classname& src) :
    m1(src.m1), m2(src.m2), ... mn(src.mn) { }
 ```
-**When the copy constructor Is called**
+**When the copy constructor Is called**  
  1.	pass-by-value
  2.	Whenever you return an object from a function or method.
 
@@ -361,7 +361,7 @@ SpreadsheetCell myCell3(myCell2);
 // myCell3 has the same values as myCell2
 ```
 
-**Initializer-List Constructors**
+**Initializer-List Constructors**  
 An initializer-list constructor is a constructor with ``` std::initializer_list<T> ``` as fi rst argument, without any additional arguments or with additional arguments having default values. Before you can use the ``` std::initializer_list<T> ``` template you need to include the ``` <initializer_list> ``` header.
 ``` cpp
 class PointSequence {
@@ -395,7 +395,7 @@ catch (const invalid_argument& e) {
 }
 ```
 
-**In-Class member initializers**
+**In-Class member initializers**  
 Before C++11, only static const integral member variables could be initialized in the class definition.
 ``` cpp
 #include <string>
@@ -408,7 +408,7 @@ protected:
 };
 ```
 
-**Delegating Constructors**
+**Delegating Constructors**  
 Delegating constructors allow constructors to call another constructor from the same class. However, this call cannot be placed in the constructor body; it should be in the constructor initializer.
 When this string constructor (the delegating constructor) is called, it will fi rst delegate the call to the target, double constructor. When the target constructor returns, the body of the delegating constructor will be executed.
 ``` cpp
@@ -417,10 +417,10 @@ SpreadsheetCell::SpreadsheetCell(const string& initialValue)
 }
 ```
 
-**Copy constructor**
+**Copy constructor**  
 If you only define A copy constructor only, no default constructor generated by the compiler. As long as you don’t define a copy constructor explicitly, the compiler creates one for you. On the other hand, as soon as you define any constructor, the compiler stops generating a default constructor.
 
-**Destruction**
+**Destruction**  
 Objects on the stack are destroyed in the reverse order of their declaration Objects on the stack are destroyed in the reverse order of their declaration. In the following code fragment, myCell2 is allocated before anotherCell2, so anotherCell2 is destroyed before myCell2
 ``` cpp
 {
@@ -428,7 +428,7 @@ Objects on the stack are destroyed in the reverse order of their declaration Obj
    SpreadsheetCell anotherCell2(5); // myCell2 constructed before anotherCell2
 } // anotherCell2 destroyed before myCell2
 ```
-**Assignment Operator**
+**Assignment Operator**  
 ``` cpp
 class SpreadsheetCell
 {
@@ -450,7 +450,7 @@ SpreadsheetCell& SpreadsheetCell::operator=(const SpreadsheetCell& rhs)
 }
 ```
 
-**Distinguishing Copying from Assignment**
+**Distinguishing Copying from Assignment**  
 The following constructed with the copy constructor, because this is a declaration
 ``` cpp
 SpreadsheetCell myCell(5);
@@ -463,7 +463,7 @@ anotherCell = myCell; // Calls operator= for anotherCell.
 ```
 Here anotherCell has already been constructed, so the compiler calls operator=
 
-**Objects as Return Values**
+**Objects as Return Values**  
 ``` cpp
 SpreadsheetCell myCell2(5);
 string s1;
@@ -477,7 +477,7 @@ string s2 = myCell3.getString();
 ```
 In this case, getString() still creates a temporary unnamed string object when it returns mString. But now s2 gets its copy constructor called, not its assignment operator. With move semantics from C++11, the compiler can use a move constructor instead of a copy constructor to return mString from getString(). This is much more efficient.
 
-**2D Array allocation and Visualization**
+**2D Array allocation and Visualization**  
 ``` cpp
 Spreadsheet::Spreadsheet(int inWidth, int inHeight) : 
 mWidth(inWidth), mHeight(inHeight) {
@@ -490,12 +490,12 @@ mWidth(inWidth), mHeight(inHeight) {
 The resultant memory for a Spreadsheet called s1 on the stack with width four and height three is shown
 ![Memory](https://github.com/amroibrahim/Notes/blob/master/Images/CPP/Memory1.png)  
 
-**Assignment operators must free memory first**
+**Assignment operators must free memory first**  
 ![Memory](https://github.com/amroibrahim/Notes/blob/master/Images/CPP/Memory2.png)  
 
 Not only do the mCells pointers in s1 and s2 point to the same memory, but also you have orphaned the memory to which mCells in s1 previously pointed. That is why in assignment operators you must fi rst free the memory referenced by the left-hand side, and then do a deep copy. (Whenever you have dynamically allocated memory in a class, you should write your own copy constructor and assignment operator to provide a deep copy of the memory.)
 
-**Assignment operator self-check**
+**Assignment operator self-check**  
 The first lines of code in any assignment operator checks for self-assignment.
 This self-assignment check is required, not only for effi ciency, but also for correctness. If the preceding self-assignment test was removed, the code will most likely crash on self-assignment, because the second step in the code deletes mCells for the left-hand side and afterwards copies mCells from the right-hand side to the left-hand side. In the case of self-assignment, both sides are the same, so during copying you would access dangling pointers.
 ``` cpp
@@ -516,7 +516,7 @@ Spreadsheet& Spreadsheet::operator=(const Spreadsheet& rhs) {
 
 The assignment operator completes the "big 3" routines for managing dynamically allocated memory in an object: the destructor, the copy constructor, and the assignment operator.  Whenever you find yourself writing one of those methods you should write all of them. (Whenever a class dynamically allocates memory, write a destructor, copy constructor, and assignment operator.)
 
-**Smart Pointers**
+**Smart Pointers**  
 There are three smart pointer types in C++:
 ``` cpp
   std::unique_ptr
@@ -533,14 +533,14 @@ auto myCellp = make_unique<SpreadsheetCell>();
 // Equivalent to:
 unique_ptr<SpreadsheetCell> myCellp(new SpreadsheetCell());
 ```
-**Static Data Members**
+**Static Data Members**  
 Static Data Members  are initialized to 0 by default. Static pointers are initialized to nullptr. (When using Static variable for assigning and ID to each class in constructor, remember to assign and ID in the copy constructor too (Page 182)
 You should not copy the ID in the assignment operator. Once an ID is assigned to an object it should never change.)
 
-**const Data Members**
+**const Data Members**  
 const data members are usually static as well. You should use static const data members in place of global constants when the constants apply only to the class.
 
-**Exception**
+**Exception**  
 The destructor will not be called when you throw an exception from a constructor.
 
 **Using ternary operator in constructor**  
@@ -556,14 +556,14 @@ mHeight(inHeight < kMaxHeight ? inHeight : kMaxHeight) {
 }
 ```
 
-**reference members**
+**reference members**  
 You must initialize the reference member in constructors and copy constructor. Remember that after you have initialized a reference you cannot change the object to which it refers. Thus, you do not need to attempt to assign to references in the assignment operator.
 There is an important difference between using a const reference versus a non-const reference. The const reference SpreadsheetApplication data member can only be used to call const methods on the SpreadsheetApplication object. If you try to call a non-const method through a const reference, you will get a compiler error.
 
-**Static Const Functions**
+**Static Const Functions**  
 You also cannot declare a static method const because it is redundant. Static methods do not have an instance of the class so it would be impossible for them to change internal values. const works by making it appear inside the method that you have a const reference to each data member.
 
-**Method Overloading**
+**Method Overloading**  
 You can overload a method based on const. That is, you can write two methods with the same name and same parameters, one of which is declared const and one of which is not. The compiler will call the const method if you have a const object and the non-const method if you have a non-const object. 
 Overloaded methods can be explicitly deleted, which can be used to disallow calling a member function with particular parameters. For example, suppose you have the following class:
 ``` cpp
@@ -588,10 +588,10 @@ public:
 ```
 With this change, an attempt to call foo() with a double will be flagged as an error by the compiler, instead of performing a conversion to an integer.
 
-**Friends**
+**Friends**  
 Friend classes and methods are easy to abuse; they allow you to violate the principle of abstraction by exposing internals of your class to other classes or functions. Thus, you should use them only in limited circumstances such as operator overloading because in that case you need access to protected and private members, as discussed in the next section.
 
-**Operator overloading**
+**Operator overloading**  
 ``` cpp
 class SpreadsheetCell {
 public:
@@ -647,7 +647,7 @@ bool operator>=(const SpreadsheetCell& lhs, const SpreadsheetCell& rhs) {
    return !(lhs < rhs);
 }
 ```
-**Using Interface and Implementation Classes (expose only public members)**
+**Using Interface and Implementation Classes (expose only public members)**  
 The basic principle is to define two classes for every class you want to write: the interface class and the implementation class. The implementation class is identical to the class you would have written if you were not taking this approach. The interface class presents public methods identical to those of the implementation class, but it only has one data member: a pointer to an implementation class object. The interface class method implementations simply call the equivalent methods on the implementation class object.
 ``` cpp
 class SpreadsheetApplication; // Forward declaration
@@ -746,7 +746,7 @@ public:
    virtual void someMethod() final;
 };
 ```
-**Parent Constructors**
+**Parent Constructors**  
 C++ defines the creation order as follows:
  1.	If the class has a base class, the default constructor of the base class is executed, unless there is a call to a base class constructor in the ctor-initializer in which case that constructor is called instead of the default constructor.
  2.	Non-static data members of the class are constructed in the order in which they were declared.
@@ -914,7 +914,7 @@ public:
    virtual std::string getString() const = 0;
 };
 ```
-**Multiple inheritance name ambiguity**
+**Multiple inheritance name ambiguity**  
 The solution to the ambiguity is to either explicitly upcast the object, essentially hiding the undesired version of the method from the compiler, or to use a disambiguation syntax.
 ``` cpp
 static_cast<Dog>(myConfusedAnimal).eat(); // Slices, calling Dog::eat()
@@ -964,7 +964,7 @@ public:
    virtual void someOtherMethod();
 };
 ```
-**The override keyword**
+**The override keyword**  
 ```
 C++11 Page 247
 ```
@@ -1037,7 +1037,7 @@ public:
 ```
 When you inherit a constructor from a base class, you inherit all of them. It is not possible to inherit only a subset of the constructors of a base class.
 
-**In class member initializers**
+**In class member initializers**  
 ```
 C++11 Page 251
 ```
@@ -1052,7 +1052,7 @@ protected:
 };
 ```
 
-**Superclass method is static**
+**Superclass method is static**  
 ```
 2ed Page 252, 3ed Page 257
 static methods are scoped by the name of the class in which they are defined, but are not methods that apply to a specific object. A method in a class that calls a static method calls the version determined by normal name resolution. When called syntactically by using an object, the object is not actually involved in the call, except to determine the type.
@@ -1071,7 +1071,7 @@ SubStatic keepin’ it static.
 SuperStatic being static.
 ```
 
-**Superclass method is overloaded**
+**Superclass method is overloaded**  
 ```cpp
 class Super
 {
@@ -1146,7 +1146,7 @@ Sub’s go with i=2
 ```
 The reason for this behavior is that C++ binds default arguments to the type of the expression describing the object being involved, not by the actual object type. For this same reason, default arguments are not “inherited” in C++. If the Sub class above failed to provide a default argument as its parent did, it would be overloading the go() method with a new non zero-argument version.
 
-**Superclass method has a different access level**
+**Superclass method has a different access level**  
 To enforce tighter restriction on a method (or on a data member for that matter), there are two approaches you can take. One way is to change the access specifier for the entire base class. This approach is described later in this chapter. The other approach is simply to redefine the access in the subclass, as illustrated in the Shy class that follows:
 ``` cpp
 class Gregarious
