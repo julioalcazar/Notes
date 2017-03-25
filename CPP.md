@@ -729,7 +729,7 @@ Spreadsheet& Spreadsheet::operator=(const Spreadsheet& rhs)
 }
 ```
 
-**Preventing Inheritance** C++11 only
+**Preventing Inheritance** C++11 only  
 C++11 allows you to mark a class as final, which means trying to inherit from it will result in a compiler error.
 ``` cpp
 class Super final {
@@ -737,7 +737,7 @@ class Super final {
 };
 ```
 
-**Preventing Overriding** C++11 only
+**Preventing Overriding** C++11 only  
 C++11 allows you to mark a method as final which means that the method cannot be overridden in a subclass. Trying to override a final method will result in a compiler error.
 ``` cpp
 class Super {
