@@ -866,3 +866,33 @@ Microsoft Visual C++ supports the __super keyword (with two underscores).
 This allows you to write the following:
 return __super::getTemperature() + "\u00B0F";
 ```
+
+**Casting Up and Down**
+This is generally the correct way to refer to a subclass in terms of its superclass, also called upcasting.
+```
+When upcasting, use a pointer or reference to the superclass to avoid slicing.
+```
+``` cpp
+Super mySuper = mySub; // SLICE!
+Super& mySuper = mySub; // No slice!
+```
+Casting from a superclass to one of its subclasses, also called downcasting, is often frowned upon by professional C++ programmers because there is no guarantee that the object really belongs to that subclass.  
+``` cpp
+void presumptuous(Super* inSuper)
+{
+   Sub* mySub = static_cast<Sub*>(inSuper);
+   // Proceed to access Sub methods on mySub.
+}
+```
+Downcasting is sometimes necessary, and you can use it effectively in controlled circumstances. If you’re going to downcast, however, you should use a dynamic_cast, which uses the object’s built-in knowledge of its type to refuse a cast that doesn’t make sense. If a dynamic_cast fails on a pointer, the pointer’s value will be nullptr instead of pointing to nonsensical data. If a dynamic_cast fails on an object reference, a std::bad_cast exception will be thrown. Chapter 9 discusses casting in more detail and Chapter 10 explains more about exceptions.
+The previous example should have been written as follows:
+``` cpp
+void lessPresumptuous(Super* inSuper)
+{
+   Sub* mySub = dynamic_cast<Sub*>(inSuper);
+   if (mySub != nullptr) 
+   {
+      // Proceed to access Sub methods on mySub.
+   }
+}
+```
