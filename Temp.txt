@@ -1,3 +1,4 @@
+https://www.youtube.com/watch?v=GKgAVjJxh9w&index=1&list=PLX6IKgS15Ue02WDPRCmYKuZicQHit9kFt
 http://www.ibm.com/developerworks/linux/library/l-completely-fair-scheduler/
 https://www.reddit.com/r/gamedev/comments/46uvhq/any_good_ways_of_learning_about_making/
 http://freecomputerbooks.com/Modern-Multithreading.html
