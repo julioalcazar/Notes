@@ -48,11 +48,12 @@ __Disadvantage of contiguously-allocated arrays include:__
 * Cannot adjust their size in the middle of a program’s execution. Our program will fail soon as we try to add the (n + 1)st customer, if we only allocate room for n records. We can compensate by allocating extremely large arrays, but this can waste space, again restricting what our programs can do.  
 
 ## Linked Data Structures (Linked List)  
+Advantages of Linked List  
 * Overflow on linked structures can never occur unless the memory is actually full.  
 * Insertions and deletions are simpler than for contiguous (array) lists.  
 * With large records, moving pointers is easier and faster than moving the items themselves.  
 
-Relative advantages of arrays include:  
+Disadvantage of linked List  
 * Linked structures require extra space for storing pointer fields.  
 * Linked lists do not allow efficient random access to items.  
 * Arrays allow better memory locality and cache performance than random pointer jumping.  
@@ -95,13 +96,13 @@ The dictionary data type permits access to data items by content. You stick an i
 * __Extract-Max :__ which runs in O(lg n) time.
 
 >  In array implementation if array index starts with Zero then  
->  iParent      = floor((i-1) / 2)  
+>  iParent     = floor((i-1) / 2)  
 >  iLeftChild  = 2*i + 1  
 >  iRightChild = 2*i + 2  
 >  
 >  if index start with 1  
->  iParent      = floor((i) / 2)  
->  iLeftChild   = 2*i  
+>  iParent     = floor((i) / 2)  
+>  iLeftChild  = 2*i  
 >  iRightChild = 2*i + 1  
 
 A heap is a specialized tree-based data structure that satisfies the heap property: If A is a parent node of B then the key of node A is ordered with respect to the key of node B with the same ordering applying across the heap. Either the keys of parent nodes are always greater than or equal to those of the children and the highest key is in the root node (this kind of heap is called max heap) or the keys of parent nodes are less than or equal to those of the children and the lowest key is in the root node (min heap).  
@@ -116,7 +117,7 @@ Heaps has the following properties:
 
 Assumption min-heap  
 __Heapify-up__ (swim)  
-Used to add a node to the heap. To add a node, it is inserted at the last empty space and heapify-up process is done. When a node is added, its key is compared to its parent. If parent key is smaller than the current node it is swapped. The process is repeated till the heap property is met.  
+Used to add a node to the heap. To add a node, it is inserted at the last empty space and heapify-up process is done. When a node is added, its key is compared to its parent. If parent key is smaller than the current node it is swapped. The process is repeated till the heap propert is met.  
 
 __Heapify-down__ (sink)  
 Used during removal of a node. When a node is removed which is always the root (lowest in priority) the last available node in heap is replaced as the root and heapify-down process is done. The key of parent node is compared with the children. If any of the children have lower priority it is swapped with the parent. The process is repeated for the newly swapped node till the heap property is met.  
