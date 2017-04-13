@@ -1,6 +1,6 @@
 # Cloud Networking  
 ## Application and Traffic Patterns  
-* Scatter-Gather  
+* Scatter-Gather pattern  
 * MapReduce  
   
 ## Application and Traffic Patterns Discussion  
