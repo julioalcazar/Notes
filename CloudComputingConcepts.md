@@ -41,7 +41,7 @@
 4. Clients also communicate with each other  
 
 ### Cloud is a Distributed System
-    * Servers communicate amongst one  
-    * Clients communicate with servers  
-    * Clients may also communicate with each other  
-        * In peer-to-peer systems like BitTorrent  
+* Servers communicate amongst one  
+* Clients communicate with servers  
+* Clients may also communicate with each other  
+   * In peer-to-peer systems like BitTorrent  
