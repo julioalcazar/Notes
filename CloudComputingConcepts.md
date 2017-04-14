@@ -13,12 +13,12 @@
     * Each site perhaps with a different structure and services
 
 ### Four Features New in Today’s Clouds  
-1. Massive scale.  
-2. On-demand access : Pay-as-you-go, no upfront commitment.  
+1. __Massive scale__  
+2. __On-demand access__: Pay-as-you-go, no upfront commitment.  
     * Anyone can access it  
-3. Data-intensive Nature: What was MBs has now become TBs, PBs and XBs.  
+3. __Data-intensive Nature__: What was MBs has now become TBs, PBs and XBs.  
     * Daily logs, forensics, Web data, etc.  
     * Humans have data numbness: Wikipedia (large) compress is only about 10 GB!  
-4. New Cloud Programming Paradigms: MapReduce/Hadoop, NoSQL/Cassandra/MongoDB and many others.  
+4. __New Cloud Programming Paradigms__: MapReduce/Hadoop, NoSQL/Cassandra/MongoDB and many others.  
     * High in accessibility and ease of programmability  
     * Lots of open-source  
