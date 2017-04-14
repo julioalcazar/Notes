@@ -31,3 +31,17 @@
     * Ex: Google’s AppEngine (Python, Java, Go)
 * __SaaS__: Software as a Service
     * Ex: Google docs, MS Office on demand
+
+### Cloud 
+1. A cloud consists of  
+    * Hundreds to thousands of machines in a datacenter (server side)  
+    * Thousands to millions of machines accessing these services (client side)  
+2. Servers communicate amongst one another  
+3. Clients communicate with servers  
+4. Clients also communicate with each other  
+
+### Cloud is a Distributed System
+    * Servers communicate amongst one  
+    * Clients communicate with servers  
+    * Clients may also communicate with each other  
+        * In peer-to-peer systems like BitTorrent  
