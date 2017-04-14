@@ -22,3 +22,12 @@
 4. __New Cloud Programming Paradigms__: MapReduce/Hadoop, NoSQL/Cassandra/MongoDB and many others.  
     * High in accessibility and ease of programmability  
     * Lots of open-source  
+
+### Services Classification
+* HaaS: Hardware as a Service
+* IaaS: Infrastructure as a Service
+    * Ex: Amazon Web Services (AWS: EC2 and S3), Eucalyptus, Rightscale, Microsoft Azure
+* PaaS: Platform as a Service
+    * Ex: Google’s AppEngine (Python, Java, Go)
+* SaaS: Software as a Service
+    * Ex: Google docs, MS Office on demand
