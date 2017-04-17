@@ -51,3 +51,7 @@ A distributed system is a model in which components located on networked compute
   * concurrency of components  
   * lack of a global clock 
   * independent failure of components
+
+### MapReduce  
+A MapReduce program is composed of a Map() procedure (method) that performs filtering and sorting (such as sorting students by first name into queues, one queue for each name) and a Reduce() method that performs a summary operation (such as counting the number of students in each queue, yielding name frequencies). The "MapReduce System" (also called "infrastructure" or "framework") orchestrates the processing by marshalling the distributed servers, running the various tasks in parallel, managing all communications and data transfers between the various parts of the system, and providing for redundancy and fault tolerance.
+
