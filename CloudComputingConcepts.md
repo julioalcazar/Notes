@@ -57,6 +57,7 @@ A MapReduce program is composed of a Map() procedure (method) that performs filt
 
 ### MapReduce Scheduler  
 This will focuse on YARN Scheduler (Yet Another Resource Negotiator)
+![YARN Scheduler](https://github.com/amroibrahim/Notes/blob/master/Images/CloudComputingConcepts/YARN_Scheduler.png)
 * Resource Manger  
    * Global resource shceduler  
    * Hierarchical queues  
