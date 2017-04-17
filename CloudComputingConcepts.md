@@ -55,3 +55,17 @@ A distributed system is a model in which components located on networked compute
 ### MapReduce  
 A MapReduce program is composed of a Map() procedure (method) that performs filtering and sorting (such as sorting students by first name into queues, one queue for each name) and a Reduce() method that performs a summary operation (such as counting the number of students in each queue, yielding name frequencies). The "MapReduce System" (also called "infrastructure" or "framework") orchestrates the processing by marshalling the distributed servers, running the various tasks in parallel, managing all communications and data transfers between the various parts of the system, and providing for redundancy and fault tolerance.
 
+### MapReduce Scheduler  
+This will focuse on YARN Scheduler (Yet Another Resource Negotiator)
+* Resource Manger  
+   * Global resource shceduler  
+   * Hierarchical queues  
+   * Application managment  
+* Node Manager  
+   * Per-machine agent  
+   * Manages the life-cycle of container  
+   * container resource monitoring  
+* Application Master  
+   * Per-application  
+   * Manages application scheduling and task execution  
+   * E.g. MapReduce Application Master  
