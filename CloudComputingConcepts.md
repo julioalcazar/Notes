@@ -45,3 +45,9 @@
 * Clients communicate with servers  
 * Clients may also communicate with each other  
    * In peer-to-peer systems like BitTorrent  
+
+### Distributed System  
+A distributed system is a model in which components located on networked computers communicate and coordinate their actions by passing messages. The components interact with each other in order to achieve a common goal. Three significant characteristics of distributed systems are:
+  * concurrency of components  
+  * lack of a global clock 
+  * independent failure of components
