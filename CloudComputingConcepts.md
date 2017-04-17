@@ -70,3 +70,19 @@ This will focuse on YARN Scheduler (Yet Another Resource Negotiator)
    * Per-application  
    * Manages application scheduling and task execution  
    * E.g. MapReduce Application Master  
+
+### Fault Tolerance
+* Server failure
+   * Heart beats 
+      * NM heartbeats to RM  
+      * NM keeps track of each task running at its server  
+      * AM heartbeats to RM  
+   * RM failure
+      * use old checkpoint and bring up secondary RM
+* Slow Servers
+   * Straggelers (slow nodes)
+      * Keep track of progress
+      * replicate execution of straggler trask (speculative execution)
+* Locality
+
+
