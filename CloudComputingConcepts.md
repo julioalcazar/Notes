@@ -87,11 +87,11 @@ This will focuse on YARN Scheduler (Yet Another Resource Negotiator)
 
 ## Protocols  
 ### Multicast  
-#### Challenges  
-__Fault tolerant__  
-__Scalability__  
+* Challenges  
+   * Fault tolerant  
+   * Scalability  
 
-#### Implementation
-__Centralized:__A node send data to all other noded on network (hight overhead)
-__Tree-Based:__Nodes send data to its child node only (a tree hierarchical nodes connection need to be built)
+* Implementation  
+   * Centralized: A node send data to all other noded on network (hight overhead)  
+   * Tree-Based: Nodes send data to its child node only (a tree hierarchical nodes connection need to be built)  
 
