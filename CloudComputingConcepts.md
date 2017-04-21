@@ -94,4 +94,7 @@ This will focuse on YARN Scheduler (Yet Another Resource Negotiator)
 * Implementation  
    * Centralized: A node send data to all other noded on network (hight overhead)  
    * Tree-Based: Nodes send data to its child node only (a tree hierarchical nodes connection need to be built)  
-
+   * Gossipe: A node picks a random P number of nodes and send them a copy of the gossip. Infecting other nodes in group  
+      * Pusha: Once you have a multicast message, you start gossiping about it.
+      * Pull: Periodically poll a few randomly selected processes for new multicast messages the you haven't received
+      * Hybrid Push-Pull
