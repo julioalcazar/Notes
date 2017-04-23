@@ -98,3 +98,15 @@ This will focuse on YARN Scheduler (Yet Another Resource Negotiator)
       * __Push__: Once you have a multicast message, you start gossiping about it.
       * __Pull__: Periodically poll a few randomly selected processes for new multicast messages the you haven't received
       * __Hybrid Push-Pull__
+
+## Failure Detection
+What could g o wrong without a faliur detector?
+* Data lose
+* Data inconsistency (poor service quality)
+
+### Failure Types
+* Crash-stop/Fail-stop
+* Crash-recovery
+
+### Group Membership Service
+A group membership service should give surviving processes a consistent view of which nodes that are alive.  
