@@ -116,3 +116,8 @@ A group membership service should give surviving processes a consistent view of 
 * Accuracy: there is no mistaken detection
 * Speed: Time to first detection of a faliure
 * Scale: Equal load on each member, and Network Message load.
+
+### Failure Detectors
+* Centralized Heartbeating
+* Ring Heartbeating
+* All to All Heartbeating
