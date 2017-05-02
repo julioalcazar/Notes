@@ -110,3 +110,9 @@ What could g o wrong without a faliur detector?
 
 ### Group Membership Service
 A group membership service should give surviving processes a consistent view of which nodes that are alive.  
+
+### Distributed Failure Detectors: Desirable Properties
+* Completeness: Each failure is detected
+* Accuracy: there is no mistaken detection
+* Speed: Time to first detection of a faliure
+* Scale: Equal load on each member, and Network Message load.
