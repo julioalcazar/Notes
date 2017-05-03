@@ -123,4 +123,9 @@ A group membership service should give surviving processes a consistent view of 
 * All to All Heartbeating
 
 ### Gossip Style Heartbeating (variant of All to All Heartbeating)
-
+* Protocol
+   * Periodically gossip their membership list
+   * On receipt, the local list membership list is updated
+   * We must label the local time, since this is asynchronous system
+   * If the heartbeat has not increased for more than T_failed seconds, the member considered as failed.
+   * After T_cleanup seconds, it will be deleted from the list.
