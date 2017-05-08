@@ -121,6 +121,7 @@ A group membership service should give surviving processes a consistent view of 
 * Centralized Heartbeating
 * Ring Heartbeating
 * All to All Heartbeating
+* Swim Failure Detector Protocol
 
 ### Gossip Style Heartbeating (variant of All to All Heartbeating)
 * Protocol
