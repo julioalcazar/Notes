@@ -130,3 +130,9 @@ A group membership service should give surviving processes a consistent view of 
    * We must label the local time, since this is asynchronous system
    * If the heartbeat has not increased for more than T_failed seconds, the member considered as failed.
    * After T_cleanup seconds, it will be deleted from the list.
+
+### Swim Failure Detector Protocol
+* Protocol
+   * Send a direct ping message.
+   * If no ACK send and inderect ping message.
+   * If no ACK mark the targed and failed
