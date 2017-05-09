@@ -135,4 +135,4 @@ A group membership service should give surviving processes a consistent view of 
 * Protocol
    * Send a direct ping message.
    * If no ACK send and inderect ping message.
-   * If no ACK mark the targed and failed
+   * If no ACK mark the target (PJ) as fail
