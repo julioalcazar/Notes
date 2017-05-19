@@ -136,3 +136,12 @@ A group membership service should give surviving processes a consistent view of 
    * Send a direct ping message.
    * If no ACK send and inderect ping message.
    * If no ACK mark the target (PJ) as fail
+
+### P2P Systems  
+* Napster
+   * Has Servers and Peers (servers store index of which clinet has has which files, Peers has the actule files)
+   * Servers uses Ternary tree to index information
+* Gnutella
+   * No Servers
+
+   
