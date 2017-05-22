@@ -143,5 +143,6 @@ A group membership service should give surviving processes a consistent view of 
    * Servers uses Ternary tree to index information
 * Gnutella
    * No Servers
+   * Client act as servers too are called servants
 
    
