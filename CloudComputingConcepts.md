@@ -144,5 +144,9 @@ A group membership service should give surviving processes a consistent view of 
 * Gnutella
    * No Servers
    * Client act as servers too are called servants
-
-   
+   * 5 Message Types
+      * Query (search)
+      * QueryHit (response to query)
+      * Ping (to probe network for other peers)
+      * Pong (reply to ping, sontains address of another peer)
+      * Push (used to initiate file transfer)
