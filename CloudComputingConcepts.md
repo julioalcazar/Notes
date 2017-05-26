@@ -161,3 +161,4 @@ A group membership service should give surviving processes a consistent view of 
    * Peers are leecher if they have parts of the file  
    * Peers uses Local Rarest First Policy  
    
+### DHT (Distributed Hash Table)
