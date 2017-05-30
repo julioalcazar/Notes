@@ -160,6 +160,8 @@ A group membership service should give surviving processes a consistent view of 
    * Peers are seeds if they have full file  
    * Peers are leecher if they have parts of the file  
    * Peers uses Local Rarest First Policy  
+* Chord
+   * Uses DHT
    
 ### DHT (Distributed Hash Table)
 * Performance Concerns
