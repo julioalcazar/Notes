@@ -162,6 +162,8 @@ A group membership service should give surviving processes a consistent view of 
    * Peers uses Local Rarest First Policy  
 * Chord
    * Uses DHT
+   * Peer Pointers (Successors) Peer know the colockwise successors in a ring topology.  
+   * Peer Pointers (Finger Tables) Peer
    
 ### DHT (Distributed Hash Table)
 * Performance Concerns
