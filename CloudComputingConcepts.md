@@ -162,3 +162,9 @@ A group membership service should give surviving processes a consistent view of 
    * Peers uses Local Rarest First Policy  
    
 ### DHT (Distributed Hash Table)
+* Performance Concerns
+   * Load Balancing
+   * Fault-tolerance
+   * Efficiency of lookups and inserts
+   * Locality
+   
