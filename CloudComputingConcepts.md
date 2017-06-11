@@ -164,6 +164,9 @@ A group membership service should give surviving processes a consistent view of 
    * Uses DHT
    * Peer Pointers (Successors) Peer know the colockwise successors in a ring topology.  
    * Peer Pointers (Finger Tables) Peer
+* Pastry
+   * Each node knows its successors and predecessors, multiple successors, multiple predecessors
+   * Routing Tables use prefix matching (prefix routing) O(log (N))
    
 ### DHT (Distributed Hash Table)
 * Performance Concerns
