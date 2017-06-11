@@ -167,7 +167,10 @@ A group membership service should give surviving processes a consistent view of 
 * Pastry
    * Each node knows its successors and predecessors, multiple successors, multiple predecessors
    * Routing Tables use prefix matching (prefix routing) O(log (N))
-   
+* Kelips
+   * Use "K" affinity groups (virtual groups)
+   * Every peer belongs to exactly one group, obtained by hashing and then taking modulo
+
 ### DHT (Distributed Hash Table)
 * Performance Concerns
    * Load Balancing
