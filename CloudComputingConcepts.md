@@ -177,4 +177,6 @@ A group membership service should give surviving processes a consistent view of 
    * Fault-tolerance
    * Efficiency of lookups and inserts
    * Locality
-   
+
+### Apache Cassandra
+Is a free and open-source distributed NoSQL database management system designed to handle large amounts of data across many commodity servers.
