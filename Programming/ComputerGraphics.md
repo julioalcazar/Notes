@@ -7,3 +7,11 @@ Vector Cross Product
   a x b = -b x a  
   ||a x b|| = ||a|| ||b|| sin (0)  
   
+  Properties  
+  X x Y = +Z  
+  Y x X = -Z  
+  Y x Z = +X  
+  Z x Y = -X  
+  Z x X = +Y  
+  X x Z = -Y  
+  
