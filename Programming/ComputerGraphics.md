@@ -15,5 +15,6 @@
   Z x X = +Y  
   X x Z = -Y  
   
+#### Adding and Subtracting Vectors and Points
 *  A point plus a vector will result in a point
 *  A vector plus a vector will result in a vector
